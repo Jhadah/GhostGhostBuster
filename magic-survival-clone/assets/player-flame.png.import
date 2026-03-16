@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f1pv2rtn8xki"
-path="res://.godot/imported/floor-tile.png-ea7a6649fea9df51fd3ee49bf4719aa7.ctex"
+uid="uid://demgjnvxiuo4a"
+path="res://.godot/imported/player-flame.png-d85b78176ccc3269a217d3a446d486ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/floor-tile.png"
-dest_files=["res://.godot/imported/floor-tile.png-ea7a6649fea9df51fd3ee49bf4719aa7.ctex"]
+source_file="res://assets/player-flame.png"
+dest_files=["res://.godot/imported/player-flame.png-d85b78176ccc3269a217d3a446d486ce.ctex"]
 
 [params]
 

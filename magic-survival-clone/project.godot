@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="magic-survival-clone"
-run/main_scene="res://main.tscn"
-config/features=PackedStringArray("4.6", "Forward Plus")
+run/main_scene="uid://deaeudvle7r7r"
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://scripts/Global.gd"
 
 [display]
 
