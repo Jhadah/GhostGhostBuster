@@ -1,15 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cv0e8beii6nnf"]
+[gd_scene format=3 uid="uid://cv0e8beii6nnf"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_h1aey"]
-radius = 4.2426405
+[node name="bullet" type="CharacterBody2D" unique_id=225370763]
 
-[node name="bullet" type="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1232896992]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 4.0
-offset_bottom = 4.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_h1aey")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1952801855]

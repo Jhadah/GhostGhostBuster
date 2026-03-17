@@ -4,7 +4,7 @@ extends Node2D
 @export var player: CharacterBody2D
 var enemy_cap:int = 300
 
-var spawn_distance:int = 1000
+var spawn_distance:int = 900
 
 func spawn_enemy():
 	if Global.n_enemies_alive > enemy_cap:
