@@ -37,5 +37,8 @@ script = ExtResource("4_tbgi4")
 enemy_scene = ExtResource("5_tbgi4")
 player = NodePath("../player")
 
-[node name="enemy" parent="." instance=ExtResource("5_tbgi4")]
-position = Vector2(295, 464)
+[node name="Timer" type="Timer" parent="spawnManger"]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="spawnManger/Timer" to="spawnManger" method="_on_timer_timeout"]
