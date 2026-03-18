@@ -18,10 +18,8 @@ func spawn_enemy():
 	enemy.dir = player.global_position
 	
 	get_parent().add_child(enemy)
-	print("nemico spawnato")
 
-
-func _on_timer_timeout() -> void:
-	var amount_of_enemies = randi_range(3,5)
+func _on_spawn_timer_timeout() -> void:
+	var amount_of_enemies = randi_range(2,4)
 	for i in range(amount_of_enemies):
 		spawn_enemy()

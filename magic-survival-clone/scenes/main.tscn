@@ -1,44 +1,44 @@
-[gd_scene format=3 uid="uid://deaeudvle7r7r"]
+[gd_scene load_steps=6 format=3 uid="uid://deaeudvle7r7r"]
 
 [ext_resource type="PackedScene" uid="uid://mkmur1nsuw3t" path="res://scenes/player.tscn" id="1_ig7tw"]
-[ext_resource type="Texture2D" path="res://assets/WhatsApp Image 2026-03-17 at 22.19.50.jpeg" id="1_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://dt0gb24gfmghg" path="res://assets/true-floor.jpeg" id="1_tbgi4"]
 [ext_resource type="Script" uid="uid://cjx5sei852y7e" path="res://scripts/floor.gd" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://by4cw1fsrjma4" path="res://scripts/spawn_manger.gd" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://da0v5qosoacbs" path="res://scenes/enemy.tscn" id="5_tbgi4"]
 
-[node name="main" type="Node2D" unique_id=1708479408]
+[node name="main" type="Node2D"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1606128261]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="floor" type="Sprite2D" parent="CanvasLayer" unique_id=967706740 node_paths=PackedStringArray("player")]
+[node name="floor" type="Sprite2D" parent="CanvasLayer" node_paths=PackedStringArray("player")]
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(0, 1.9073486e-06)
-scale = Vector2(1, 0.9032257)
+scale = Vector2(0.6666666, 0.6666667)
 texture = ExtResource("1_tbgi4")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 1024, 992)
+region_rect = Rect2(0, 0, 1536, 1488)
 script = ExtResource("4_jyhfs")
 player = NodePath("../../player")
 
-[node name="player" parent="." unique_id=1493220879 instance=ExtResource("1_ig7tw")]
+[node name="player" parent="." instance=ExtResource("1_ig7tw")]
 z_index = 2
 position = Vector2(486, 459)
 speed = 200
 
-[node name="mainCamera" type="Camera2D" parent="player" unique_id=520643352]
+[node name="mainCamera" type="Camera2D" parent="player"]
 position = Vector2(-243, -229.5)
 anchor_mode = 0
 
-[node name="spawnManger" type="Node2D" parent="." unique_id=988547064 node_paths=PackedStringArray("player")]
+[node name="spawnManger" type="Node2D" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("4_tbgi4")
 enemy_scene = ExtResource("5_tbgi4")
 player = NodePath("../player")
 
-[node name="Timer" type="Timer" parent="spawnManger" unique_id=839611697]
+[node name="spawnTimer" type="Timer" parent="spawnManger"]
 wait_time = 3.0
 autostart = true
 
-[connection signal="timeout" from="spawnManger/Timer" to="spawnManger" method="_on_timer_timeout"]
+[connection signal="timeout" from="spawnManger/spawnTimer" to="spawnManger" method="_on_spawn_timer_timeout"]

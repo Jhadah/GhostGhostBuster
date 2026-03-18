@@ -1,13 +1,14 @@
 extends CharacterBody2D
 
 #--stats--
-@export var speed: int = 60
+@export var speed: int = 100
 @export var turn_speed:float = 2.0
 
 var dir:Vector2
 var current_dir:Vector2
 
 func _ready() -> void:
+	Global.enemy_spawned()
 	$AnimatedSprite2D.play("default")
 
 func _physics_process(delta: float) -> void:
@@ -17,5 +18,6 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func die():
-	Global.n_enemies_alive -= 1
+	Global.enemy_died()
 	queue_free()
+	

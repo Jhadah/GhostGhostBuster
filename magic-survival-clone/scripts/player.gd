@@ -4,9 +4,8 @@ extends CharacterBody2D
 @export var speed:int = 100
 
 #--utils--
-var bullet_scene:PackedScene
+@export var bullet_scene:PackedScene
 var is_facing_left:bool = true 
-
 
 func _ready() -> void:
 	Global.player = self
@@ -21,7 +20,9 @@ func _physics_process(_delta: float) -> void:
 	
 	manage_sprite_orientation(dir)
 
-#region funcs
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("shoot"):
+		shoot()
 
 func manage_sprite_orientation(dir):
 	if dir.x < 0:
@@ -31,26 +32,11 @@ func manage_sprite_orientation(dir):
 	
 	$"player-sprite".flip_h = ! is_facing_left
 
-func check_nearest_enemy(): 
-	var nearest:CharacterBody2D = null
-	var min_distance:float = INF
-	
-	for enemy in $attackRange.enemies_in_range:
-		var dist:float = global_position.distance_to(enemy.global_position)
-		
-		if dist < min_distance:
-			min_distance = dist
-			nearest = enemy
-	return nearest
-
 func shoot():
-	var shoot_dir = check_nearest_enemy()
-	if !shoot_dir:
-		return
-	
-	var bullet = bullet_scene.instantiate() 
-	bullet.dir = shoot_dir
+	var target_dir = get_global_mouse_position()
+	var bullet = bullet_scene.instantiate()
+	bullet.dir = (target_dir - global_position).normalized()
+	bullet.position = global_position
 	
 	get_parent().add_child(bullet)
-
-#endregion
+	print("pow")
