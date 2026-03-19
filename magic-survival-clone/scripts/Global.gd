@@ -1,8 +1,9 @@
 extends Node
 
 var Viewport_Size:Vector2
-var player:CharacterBody2D
+var Player:CharacterBody2D    #viene assegnato nel nodo player
 var n_enemies_alive:int = 0
+var bullet_damage:int = 1
 
 func _ready() -> void:
 	Viewport_Size = get_tree().root.get_visible_rect().size

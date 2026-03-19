@@ -1,15 +1,21 @@
 extends CharacterBody2D
 
-@export var speed:int = 200
 var dir:Vector2
+#--stats--
+@export var speed:int = 400
 
 func _ready() -> void:
 	$AnimatedSprite2D.play("default")
-	var angle = dir.angle()
-	rotate(angle)
+	rotation = dir.angle() - PI #perchè lo sprite punta a sinistra
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	velocity = dir * speed
-	if dir.x < 0:
-		$AnimatedSprite2D.flip_h = true
-	move_and_slide()
+	var collision = move_and_collide(velocity*delta)
+	if collision: 
+		var collider:Enemy = collision.get_collider()
+		if collider.is_in_group("enemy"):
+			collider.take_damage(Global.bullet_damage)
+		queue_free()
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free()

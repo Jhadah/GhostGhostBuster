@@ -1,7 +1,6 @@
 extends Node2D
 
 @export var enemy_scene:PackedScene
-@export var player: CharacterBody2D
 var enemy_cap:int = 300
 
 var spawn_distance:int = 900
@@ -11,11 +10,11 @@ func spawn_enemy():
 		return
 		
 	var rand_angle:float = randf_range(0, TAU)
-	var spawn_pos:Vector2 = player.global_position + Vector2.from_angle(rand_angle) * spawn_distance
+	var spawn_pos:Vector2 = Global.Player.global_position + Vector2.from_angle(rand_angle) * spawn_distance
 	
 	var enemy = enemy_scene.instantiate()
 	enemy.position = spawn_pos
-	enemy.dir = player.global_position
+	enemy.dir = Global.Player.global_position
 	
 	get_parent().add_child(enemy)
 
