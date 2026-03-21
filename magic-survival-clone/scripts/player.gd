@@ -5,14 +5,13 @@ extends CharacterBody2D
 #--attack system--# 
 var enemies_in_range:Array[CharacterBody2D] = []
 @export var bullet_scene:PackedScene
+enum Orientation {RIGHT, LEFT, UP, DOWN}
+var current_orientation = Orientation.LEFT
 
 var is_facing_left:bool = true
 
 func _ready() -> void:
-	Global.player = self
-	
-	$"player-sprite".play("default")
-	$"flame-sprite".play("default")
+	Global.Player = self	
 
 func _physics_process(_delta: float) -> void:
 	var dir = Input.get_vector("left","right","up","down")
@@ -26,12 +25,30 @@ func _input(event: InputEvent) -> void:
 		shoot()
 
 func manage_sprite_orientation(dir):
-	if dir.x < 0:
-		is_facing_left = true
-	elif dir.x > 0:
-		is_facing_left = false
 	
-	$"player-sprite".flip_h = ! is_facing_left
+	if dir.x < 0 and dir.y == 0:
+		current_orientation = Orientation.LEFT
+	if dir.x > 0 and dir.y == 0:
+		current_orientation = Orientation.RIGHT
+	if dir.y < 0 and dir.x == 0:
+		current_orientation = Orientation.UP
+	if dir.y > 0 and dir.x == 0:
+		current_orientation = Orientation.DOWN
+	
+	match current_orientation:
+		Orientation.RIGHT:
+			$"player-sprite".play("player-side")
+			$"player-sprite".flip_h = true
+		Orientation.LEFT:
+			$"player-sprite".play("player-side")
+			$"player-sprite".flip_h = false
+		Orientation.UP:
+			$"player-sprite".play("player-up")
+			$"player-sprite".flip_h = false
+		Orientation.DOWN:
+			$"player-sprite".play("player-down")
+			$"player-sprite".flip_h = false
+		
 
 #region --shooting system--#
 func shoot():
