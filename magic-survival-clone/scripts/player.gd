@@ -26,9 +26,9 @@ func _input(event: InputEvent) -> void:
 
 func manage_sprite_orientation(dir):
 	
-	if dir.x < 0 and dir.y == 0:
+	if dir.x < 0:
 		current_orientation = Orientation.LEFT
-	if dir.x > 0 and dir.y == 0:
+	if dir.x > 0:
 		current_orientation = Orientation.RIGHT
 	if dir.y < 0 and dir.x == 0:
 		current_orientation = Orientation.UP
