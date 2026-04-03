@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="WeaponStats" load_steps=3 format=3 uid="uid://dd8x32uoj4fvf"]
+
+[ext_resource type="PackedScene" uid="uid://cv0e8beii6nnf" path="res://scenes/bullet.tscn" id="1_6ibtu"]
+[ext_resource type="Script" uid="uid://cnbue6go80ipi" path="res://scripts/upgrades/upgrades_scripts/WeaponStats.gd" id="2_6p7gi"]
+
+[resource]
+script = ExtResource("2_6p7gi")
+bullet_scene = ExtResource("1_6ibtu")
+metadata/_custom_type_script = "uid://cnbue6go80ipi"
