@@ -3,10 +3,10 @@ extends CharacterBody2D
 var dir:Vector2
 #--stats--
 var speed:int
-var damage:int
+var damage:int = 1
 
 func _ready() -> void:
-	$AnimatedSprite2D.play("default")
+	$animation.play("default")
 	rotation = dir.angle() - PI #perchè lo sprite punta a sinistra
 
 func _process(delta: float) -> void:

@@ -1,10 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://mkmur1nsuw3t"]
+[gd_scene format=3 uid="uid://mkmur1nsuw3t"]
 
 [ext_resource type="Script" uid="uid://tf0adkw26vh4" path="res://scripts/player/player.gd" id="1_onrkg"]
-[ext_resource type="PackedScene" uid="uid://cv0e8beii6nnf" path="res://scenes/bullet.tscn" id="2_qlg0r"]
 [ext_resource type="Script" uid="uid://c4sylimabuoak" path="res://scripts/player/weapons/weapon_manager.gd" id="4_dqkch"]
 [ext_resource type="Texture2D" uid="uid://b8wpv1sx6n10" path="res://assets/player-side.png" id="4_qlg0r"]
-[ext_resource type="Script" uid="uid://cntbhkw3mdfmj" path="res://scripts/player/weapons/Weapon.gd" id="4_tuyoq"]
+[ext_resource type="Resource" uid="uid://bcym02nbpaogg" path="res://scripts/player/weapons/default weapon/default_weapon.tres" id="4_tuyoq"]
+[ext_resource type="Resource" uid="uid://nyk3pmlfc5rx" path="res://scripts/player/weapons/laser weapon/laser_weapon.tres" id="5_qlg0r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i3pqv"]
 radius = 8.0
@@ -49,41 +49,36 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_dqkch"]
 radius = 213.05867
 
-[sub_resource type="Resource" id="Resource_fjrip"]
-script = ExtResource("4_tuyoq")
-weapon_scene = ExtResource("2_qlg0r")
-speed = 400
-metadata/_custom_type_script = "uid://cntbhkw3mdfmj"
-
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" unique_id=1175485991]
 scale = Vector2(2, 2)
 script = ExtResource("1_onrkg")
 
-[node name="collision-shape" type="CollisionShape2D" parent="."]
+[node name="collision-shape" type="CollisionShape2D" parent="." unique_id=265534343]
 position = Vector2(-1, -2)
 shape = SubResource("CapsuleShape2D_i3pqv")
 
-[node name="animation" type="AnimatedSprite2D" parent="."]
+[node name="animation" type="AnimatedSprite2D" parent="." unique_id=1529148614]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_2hs0m")
 animation = &"player-side"
 frame_progress = 0.43092597
 
-[node name="detection-range" type="Area2D" parent="."]
+[node name="detection-range" type="Area2D" parent="." unique_id=1111604065]
 z_index = 2
 collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="detection-range"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection-range" unique_id=1862484128]
 position = Vector2(0, -0.5)
 shape = SubResource("CircleShape2D_dqkch")
 
-[node name="shoot-timer" type="Timer" parent="."]
+[node name="shoot-timer" type="Timer" parent="." unique_id=1989787062]
 wait_time = 1.5
 autostart = true
 
-[node name="weapon-manager" type="Node" parent="."]
+[node name="weapon-manager" type="Node" parent="." unique_id=1740897832]
 script = ExtResource("4_dqkch")
-default_weapon = SubResource("Resource_fjrip")
+default_weapon = ExtResource("4_tuyoq")
+laser_weapon = ExtResource("5_qlg0r")
 
 [connection signal="body_entered" from="detection-range" to="." method="_on_detection_range_body_entered"]
 [connection signal="body_exited" from="detection-range" to="." method="_on_detection_range_body_exited"]

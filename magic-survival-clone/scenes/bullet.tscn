@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cv0e8beii6nnf"]
+[gd_scene format=3 uid="uid://cv0e8beii6nnf"]
 
 [ext_resource type="Script" uid="uid://wgpcs17c5aog" path="res://scripts/player/weapons/bullet.gd" id="1_y25gk"]
 [ext_resource type="Texture2D" uid="uid://s8h5tjh5rdxp" path="res://assets/fireball shot.png" id="2_y25gk"]
@@ -48,24 +48,24 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_eoqba"]
 radius = 7.071068
 
-[node name="bullet" type="CharacterBody2D"]
+[node name="bullet" type="CharacterBody2D" unique_id=1379143266]
 z_index = 1
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_y25gk")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="animation" type="AnimatedSprite2D" parent="." unique_id=597699755]
 z_index = 1
 texture_filter = 1
 scale = Vector2(1.5333333, 1.5333331)
 sprite_frames = SubResource("SpriteFrames_l5glv")
 frame_progress = 0.04140607
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="collision-shape" type="CollisionShape2D" parent="." unique_id=901352597]
 position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_eoqba")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1225632848]
 position = Vector2(-7, -1)
 rect = Rect2(-7, -5, 21, 15)
 
