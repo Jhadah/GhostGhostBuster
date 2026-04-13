@@ -1,19 +1,19 @@
-[gd_scene format=3 uid="uid://deaeudvle7r7r"]
+[gd_scene load_steps=6 format=3 uid="uid://deaeudvle7r7r"]
 
 [ext_resource type="PackedScene" uid="uid://mkmur1nsuw3t" path="res://scenes/player.tscn" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://dt0gb24gfmghg" path="res://assets/true-floor.jpeg" id="1_tbgi4"]
-[ext_resource type="Script" uid="uid://cjx5sei852y7e" path="res://scripts/floor.gd" id="4_jyhfs"]
-[ext_resource type="Script" uid="uid://by4cw1fsrjma4" path="res://scripts/spawn_manger.gd" id="4_tbgi4"]
+[ext_resource type="Script" uid="uid://cjx5sei852y7e" path="res://scripts/game/floor.gd" id="4_jyhfs"]
+[ext_resource type="Script" uid="uid://by4cw1fsrjma4" path="res://scripts/game/spawn_manger.gd" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://da0v5qosoacbs" path="res://scenes/base_enemy.tscn" id="5_tbgi4"]
 
-[node name="main" type="Node2D" unique_id=347106576]
+[node name="main" type="Node2D"]
 
-[node name="player" parent="." unique_id=184908192 instance=ExtResource("1_ig7tw")]
+[node name="player" parent="." instance=ExtResource("1_ig7tw")]
 z_index = 2
 position = Vector2(459, 445)
 speed = 200
 
-[node name="floor" type="Sprite2D" parent="player" unique_id=1447064576]
+[node name="floor" type="Sprite2D" parent="player"]
 z_index = -2
 texture_filter = 1
 texture_repeat = 2
@@ -25,15 +25,15 @@ region_enabled = true
 region_rect = Rect2(0, 0, 1536, 1488)
 script = ExtResource("4_jyhfs")
 
-[node name="mainCamera" type="Camera2D" parent="player" unique_id=1033696714]
+[node name="mainCamera" type="Camera2D" parent="player"]
 position = Vector2(-229.5, -222.5)
 anchor_mode = 0
 
-[node name="spawnManger" type="Node2D" parent="." unique_id=1894667524]
+[node name="spawnManger" type="Node2D" parent="."]
 script = ExtResource("4_tbgi4")
 enemy_scene = ExtResource("5_tbgi4")
 
-[node name="spawnTimer" type="Timer" parent="spawnManger" unique_id=583837222]
+[node name="spawnTimer" type="Timer" parent="spawnManger"]
 wait_time = 3.0
 autostart = true
 

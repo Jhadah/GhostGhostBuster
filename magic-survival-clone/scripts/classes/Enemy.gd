@@ -14,9 +14,9 @@ func _physics_process(delta: float) -> void:
 	dir = (Global.Player.global_position - global_position).normalized()
 	current_dir = current_dir.lerp(dir,turn_speed*delta)
 	if dir.x > 0:
-		$AnimatedSprite2D.flip_h = true
+		$animation.flip_h = true
 	else:
-		$AnimatedSprite2D.flip_h = false
+		$animation.flip_h = false
 		
 	velocity = current_dir * speed
 	move_and_slide()
@@ -27,4 +27,5 @@ func take_damage(amount:int):
 		die()
 
 func die():
+	Global.enemy_died()
 	queue_free()

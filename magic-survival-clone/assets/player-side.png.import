@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt613dp1psdi1"
-path="res://.godot/imported/plater-side.png-9f35b635171c0d89a7bd0999e8253097.ctex"
+uid="uid://b8wpv1sx6n10"
+path="res://.godot/imported/player-side.png-0ad4b532964f1f1f76fe68b09a6c7e70.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/plater-side.png"
-dest_files=["res://.godot/imported/plater-side.png-9f35b635171c0d89a7bd0999e8253097.ctex"]
+source_file="res://assets/player-side.png"
+dest_files=["res://.godot/imported/player-side.png-0ad4b532964f1f1f76fe68b09a6c7e70.ctex"]
 
 [params]
 

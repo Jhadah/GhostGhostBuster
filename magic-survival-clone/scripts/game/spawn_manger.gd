@@ -4,6 +4,8 @@ extends Node2D
 var enemy_cap:int = 300
 
 var spawn_distance:int = 900
+@export var enemies_min_amount:int = 1
+@export var enemies_max_amount:int = 2
 
 func spawn_enemy():
 	if Global.n_enemies_alive > enemy_cap:
@@ -19,6 +21,6 @@ func spawn_enemy():
 	get_parent().add_child(enemy)
 
 func _on_spawn_timer_timeout() -> void:
-	var amount_of_enemies = randi_range(2,4)
+	var amount_of_enemies = randi_range(enemies_min_amount,enemies_max_amount)
 	for i in range(amount_of_enemies):
 		spawn_enemy()
