@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="Upgrade_more_damage" load_steps=2 format=3 uid="uid://disfosmycbv5c"]
-
-[ext_resource type="Script" uid="uid://dadyfcymy28hb" path="res://scripts/upgrades/upgrades_scripts/Upgrade_more_damage.gd" id="1_ihykh"]
-
-[resource]
-script = ExtResource("1_ihykh")
-metadata/_custom_type_script = "uid://dadyfcymy28hb"

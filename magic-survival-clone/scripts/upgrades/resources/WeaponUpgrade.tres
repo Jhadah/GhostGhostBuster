@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="WeaponUpgrade" load_steps=2 format=3 uid="uid://0tyrjwg5p66w"]
-
-[ext_resource type="Script" uid="uid://citn32rtgoqs6" path="res://scripts/upgrades/upgrades_scripts/WeaponUpgrade.gd" id="1_7kfvn"]
-
-[resource]
-script = ExtResource("1_7kfvn")
-metadata/_custom_type_script = "uid://citn32rtgoqs6"
