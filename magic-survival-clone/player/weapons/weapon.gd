@@ -1,5 +1,5 @@
-extends Resource
 class_name Weapon
+extends Resource
 
 @export var weapon_scene:PackedScene
 @export var cooldown:float

@@ -10,7 +10,7 @@ var equipped_weapons:Array[Weapon] = []
 var is_targeting:bool = false
 
 func _ready() -> void:
-	equipped_weapons = [default_weapon, laser_weapon]
+	equipped_weapons = [default_weapon]
 
 func _process(delta: float) -> void:
 	for weapon in equipped_weapons:

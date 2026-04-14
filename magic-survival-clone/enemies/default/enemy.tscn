@@ -1,65 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://da0v5qosoacbs"]
+[gd_scene load_steps=3 format=3 uid="uid://bg6tyqxdjyq8b"]
 
-[ext_resource type="Script" uid="uid://c24oj8hef6eu4" path="res://enemies/default/enemy.gd" id="1_md0e3"]
-[ext_resource type="Texture2D" uid="uid://hvtc6mhobqbc" path="res://enemies/default/enemy.png" id="2_md0e3"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4ra3w"]
-atlas = ExtResource("2_md0e3")
-region = Rect2(0, 0, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5uy6h"]
-atlas = ExtResource("2_md0e3")
-region = Rect2(30, 0, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c4w8v"]
-atlas = ExtResource("2_md0e3")
-region = Rect2(0, 30, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xwavj"]
-atlas = ExtResource("2_md0e3")
-region = Rect2(30, 30, 30, 30)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_xwavj"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4ra3w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5uy6h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c4w8v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xwavj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c4w8v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5uy6h")
-}],
-"loop": true,
-"name": &"default",
-"speed": 6.0
-}]
+[sub_resource type="SpriteFrames" id="SpriteFrames_7df2f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7p1mj"]
 radius = 20.0
 height = 52.0
 
-[node name="enemy" type="CharacterBody2D" groups=["enemy"]]
+[node name="default-enemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 2
 collision_mask = 3
-script = ExtResource("1_md0e3")
 
-[node name="animation" type="AnimatedSprite2D" parent="." groups=["enemy"]]
+[node name="animation" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-5, -2)
 scale = Vector2(2.3333333, 2.3333333)
-sprite_frames = SubResource("SpriteFrames_xwavj")
-frame_progress = 0.8728084
+sprite_frames = SubResource("SpriteFrames_7df2f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_7p1mj")

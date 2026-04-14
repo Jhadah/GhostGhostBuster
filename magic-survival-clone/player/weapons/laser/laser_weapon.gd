@@ -1,5 +1,5 @@
-extends Weapon
 class_name LaserWeapon
+extends Weapon
 
 func perform_shoot(dir:Vector2, shooter:Node2D):
 	var laser = weapon_scene.instantiate()

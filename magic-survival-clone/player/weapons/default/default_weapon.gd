@@ -1,5 +1,5 @@
-extends Weapon
 class_name DefaultWeapon
+extends Weapon
 
 func perform_shoot(dir:Vector2, shooter:Node2D):
 	var bullet = weapon_scene.instantiate()
