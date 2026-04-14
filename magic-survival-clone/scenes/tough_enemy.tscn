@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dj1y8mx5l7hnp"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_8lr17"]
-
-[node name="tough_enemy" type="CharacterBody2D" groups=["enemy"]]
-
-[node name="animation" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_8lr17")

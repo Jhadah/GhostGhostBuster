@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj1y8mx5l7hnp"]
+
+[ext_resource type="Script" uid="uid://bk7b3n14qoxi8" path="res://enemies/tough/enemy.gd" id="1_8lr17"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8lr17"]
+
+[node name="enemy" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_8lr17")
+
+[node name="animation" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8lr17")
