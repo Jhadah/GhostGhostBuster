@@ -2,8 +2,9 @@ extends Resource
 class_name Weapon
 
 @export var weapon_scene:PackedScene
-@export var speed:int
 @export var cooldown:float
+@export var speed:int
+@export var damage:float
 
 var cooldown_timer = 0
 

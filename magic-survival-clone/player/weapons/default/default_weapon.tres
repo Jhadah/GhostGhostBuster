@@ -6,5 +6,6 @@
 [resource]
 script = ExtResource("1_g7wpr")
 weapon_scene = ExtResource("2_typw8")
-speed = 400
 cooldown = 1.5
+speed = 400
+damage = 1.0

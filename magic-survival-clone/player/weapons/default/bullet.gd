@@ -1,9 +1,8 @@
 extends CharacterBody2D
 
 var dir:Vector2
-#--stats--
 var speed:int
-var damage:int = 1
+var damage:float
 
 func _ready() -> void:
 	$animation.play("default")

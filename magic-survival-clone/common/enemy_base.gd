@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Enemy
 
-var hp:int
+var hp:float
 @export var speed:int
 var turn_speed:float = 2.0
 var dir:Vector2
@@ -21,7 +21,7 @@ func _physics_process(delta: float) -> void:
 	velocity = current_dir * speed
 	move_and_slide()
 
-func take_damage(amount:int):
+func take_damage(amount:float):
 	hp -= amount
 	if hp <= 0:
 		die()

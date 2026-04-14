@@ -1,13 +1,13 @@
 extends Area2D
 
-@export var damage:int = 5
 var dir:Vector2
 var shooter:Node2D  #il player
+var damage:float
 
 func _ready() -> void:
 	rotation = dir.angle()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	global_position = shooter.global_position
 
 func _on_body_entered(body: Enemy) -> void:
