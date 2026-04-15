@@ -34,4 +34,5 @@ func update_target(nearest_enemy:Node2D):
 	is_targeting = true
 
 func _on_level_up():
-	equipped_weapons.append(laser_weapon)
+	if Global.level == 5:
+		equipped_weapons.append(laser_weapon)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://dw1lts7yopg36"]
+[gd_scene load_steps=14 format=3 uid="uid://dw1lts7yopg36"]
 
 [ext_resource type="Script" uid="uid://bb1witou4pb1e" path="res://player/player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://cloamtash80jf" path="res://world/shadow.png" id="2_g6k8r"]
 [ext_resource type="Script" uid="uid://cdh8sirt7nj4u" path="res://player/weapons/weapon_manager.gd" id="4_dqkch"]
 [ext_resource type="Texture2D" uid="uid://cw4tmmw28xnlf" path="res://player/sprites/player-side.png" id="4_qlg0r"]
 [ext_resource type="Resource" uid="uid://bcym02nbpaogg" path="res://player/weapons/default/default_weapon.tres" id="4_tuyoq"]
@@ -57,6 +58,12 @@ script = ExtResource("1_onrkg")
 position = Vector2(-1, -2)
 shape = SubResource("CapsuleShape2D_i3pqv")
 
+[node name="shadow" type="Sprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(0, 9)
+texture = ExtResource("2_g6k8r")
+
 [node name="animation" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_2hs0m")
@@ -64,6 +71,7 @@ animation = &"player-side"
 frame_progress = 0.43092597
 
 [node name="detection-range" type="Area2D" parent="."]
+visible = false
 z_index = 2
 collision_mask = 3
 

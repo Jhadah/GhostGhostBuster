@@ -15,7 +15,6 @@ position = Vector2(459, 445)
 speed = 200
 
 [node name="floor" type="Sprite2D" parent="player"]
-z_index = -2
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(-229.49998, -222.5)
@@ -41,6 +40,5 @@ autostart = true
 [node name="UI-canvas-layer" type="CanvasLayer" parent="."]
 
 [node name="UI" parent="UI-canvas-layer" instance=ExtResource("1_i1eo7")]
-z_index = 3
 
 [connection signal="timeout" from="spawn_manager/spawn_timer" to="spawn_manager" method="_on_spawn_timer_timeout"]

@@ -11,7 +11,7 @@ var level:int = 1
 var level_cap:int = 10
 
 var current_exp:int = 0
-var exp_threshold:int = 100
+var max_exp:float = 100
 
 func _ready() -> void:
 	Viewport_Size = get_tree().root.get_visible_rect().size
@@ -29,5 +29,8 @@ func level_up():
 		current_exp = 0
 
 func gain_exp():
-	current_exp += (exp_threshold / level) / 4
+	current_exp += max((max_exp / level) / 4, max_exp * 0.05)
 	exp_gained.emit()
+	
+	if current_exp >= max_exp:
+		level_up()

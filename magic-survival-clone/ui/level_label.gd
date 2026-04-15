@@ -1,6 +1,7 @@
 extends Label
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	Global.level_increased.connect(_on_level_increased)
+
+func _on_level_increased():
+	text = str(Global.level)
