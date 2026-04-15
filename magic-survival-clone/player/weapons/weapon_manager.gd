@@ -10,6 +10,7 @@ var equipped_weapons:Array[Weapon] = []
 var is_targeting:bool = false
 
 func _ready() -> void:
+	Global.level_increased.connect(_on_level_up)
 	equipped_weapons = [default_weapon]
 
 func _process(delta: float) -> void:
@@ -31,3 +32,6 @@ func update_target(nearest_enemy:Node2D):
 	
 	shoot_direction = (nearest_enemy.global_position - player.global_position).normalized()
 	is_targeting = true
+
+func _on_level_up():
+	equipped_weapons.append(laser_weapon)

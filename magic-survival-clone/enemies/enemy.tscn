@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bg6tyqxdjyq8b"]
+[gd_scene load_steps=4 format=3 uid="uid://bg6tyqxdjyq8b"]
+
+[ext_resource type="Script" uid="uid://gcve35rysdf1" path="res://enemies/enemy.gd" id="1_ljprq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7df2f"]
 
@@ -6,9 +8,10 @@
 radius = 20.0
 height = 52.0
 
-[node name="default-enemy" type="CharacterBody2D" groups=["enemy"]]
+[node name="enemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 2
 collision_mask = 3
+script = ExtResource("1_ljprq")
 
 [node name="animation" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

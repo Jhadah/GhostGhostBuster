@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://cys0el5hqfy7s"]
+
+[ext_resource type="Script" uid="uid://d28blbefnj5xk" path="res://ui/progress_bar.gd" id="1_1a1bo"]
+[ext_resource type="Script" uid="uid://bo7n7scec8ylh" path="res://ui/level_label.gd" id="2_ks8t7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wl5ax"]
+font_size = 40
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="progress-bar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_right = 924.0
+offset_bottom = 27.0
+show_percentage = false
+script = ExtResource("1_1a1bo")
+
+[node name="level-label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 32.0
+offset_right = 57.0
+offset_bottom = 87.0
+text = "1"
+label_settings = SubResource("LabelSettings_wl5ax")
+script = ExtResource("2_ks8t7")

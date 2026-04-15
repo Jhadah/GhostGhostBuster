@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=8 format=3 uid="uid://duwn0vts6p7hu"]
+
+[ext_resource type="Script" uid="uid://0xmaitvn4dil" path="res://enemies/enemy-stats.gd" id="1_l57sn"]
+[ext_resource type="Texture2D" uid="uid://cc856obddxuhx" path="res://enemies/tough/tough_enemy.png" id="2_10t0n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4vnt"]
+atlas = ExtResource("2_10t0n")
+region = Rect2(0, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dw2wb"]
+atlas = ExtResource("2_10t0n")
+region = Rect2(30, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ql56q"]
+atlas = ExtResource("2_10t0n")
+region = Rect2(0, 30, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfvbt"]
+atlas = ExtResource("2_10t0n")
+region = Rect2(30, 30, 30, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3l2x8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4vnt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dw2wb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ql56q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfvbt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_l57sn")
+hp = 5.0
+speed = 60
+texture = SubResource("SpriteFrames_3l2x8")
+metadata/_custom_type_script = "uid://0xmaitvn4dil"
