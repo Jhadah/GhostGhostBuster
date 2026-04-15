@@ -51,6 +51,7 @@ animations = [{
 radius = 213.05867
 
 [node name="player" type="CharacterBody2D"]
+z_index = 2
 scale = Vector2(2, 2)
 script = ExtResource("1_onrkg")
 
