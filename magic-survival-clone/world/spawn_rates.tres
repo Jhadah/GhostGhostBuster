@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SpawnRates" load_steps=2 format=3 uid="uid://na2h4dl2pp3i"]
+
+[ext_resource type="Script" uid="uid://b7tcywcweotko" path="res://world/spawn_rates.gd" id="1_7087p"]
+
+[resource]
+script = ExtResource("1_7087p")
+default_enemy = 0.65
+tough_enemy = 0.25
+speed_enemy = 0.1
+tot = null
+metadata/_custom_type_script = "uid://b7tcywcweotko"

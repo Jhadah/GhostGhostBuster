@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="DefaultWeapon" load_steps=3 format=3 uid="uid://bcym02nbpaogg"]
 
 [ext_resource type="Script" uid="uid://d1fi00diq2v4q" path="res://player/weapons/default/default_weapon.gd" id="1_g7wpr"]
-[ext_resource type="PackedScene" path="res://player/weapons/default/bullet.tscn" id="2_typw8"]
+[ext_resource type="PackedScene" uid="uid://swq3jmyxgln0" path="res://player/weapons/default/bullet.tscn" id="2_typw8"]
 
 [resource]
 script = ExtResource("1_g7wpr")
@@ -9,3 +9,4 @@ weapon_scene = ExtResource("2_typw8")
 cooldown = 1.5
 speed = 400
 damage = 1.0
+count = 1

@@ -5,6 +5,7 @@ extends Resource
 @export var cooldown:float
 @export var speed:int
 @export var damage:float
+@export var count:int
 
 var cooldown_timer = 0
 
@@ -21,3 +22,6 @@ func shoot(dir:Vector2, shooter:Node2D):
 
 func perform_shoot(_dir:Vector2, _shooter:Node2D):
 	pass
+
+func increase_damage(amount:float):
+	damage += amount
