@@ -8,7 +8,6 @@ var Player:CharacterBody2D    #viene assegnato nel nodo player
 var n_enemies_alive:int = 0
 
 var level:int = 1
-var level_cap:int = 10
 
 var current_exp:int = 0
 var max_exp:float = 100
@@ -23,13 +22,13 @@ func enemy_died():
 	n_enemies_alive -= 1
 
 func level_up():
-	if level < level_cap:
-		level += 1
-		level_increased.emit()
-		current_exp = 0
+	level += 1
+	level_increased.emit()
+	current_exp = 0
 
 func gain_exp():
-	current_exp += max((max_exp / level) / 4, max_exp * 0.05)
+	#current_exp += max((max_exp / level) / 4, max_exp * 0.05)
+	current_exp = 100    #godmode per debug
 	exp_gained.emit()
 	
 	if current_exp >= max_exp:

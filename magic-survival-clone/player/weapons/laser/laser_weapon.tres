@@ -6,7 +6,8 @@
 [resource]
 script = ExtResource("1_8435d")
 weapon_scene = ExtResource("2_2xaxt")
-cooldown = 5.0
-damage = 5.0
-count = 1
+base_damage = 5.0
+base_count = 1
+base_cooldown = 5.0
+cooldown_min = 1.0
 metadata/_custom_type_script = "uid://ctowmhvlap0"

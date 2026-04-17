@@ -10,9 +10,9 @@ var equipped_weapons:Array[Weapon] = []
 var is_targeting:bool = false
 
 func _ready() -> void:
-	Global.level_increased.connect(_on_level_up)
 	Upgrades.upgrade_acquired.connect(on_upgrade_acquired)
-	equipped_weapons = [default_weapon]
+	
+	equip_weapon(default_weapon)
 
 func _process(delta: float) -> void:
 	for weapon in equipped_weapons:
@@ -34,15 +34,20 @@ func update_target(nearest_enemy:Node2D):
 	shoot_direction = (nearest_enemy.global_position - player.global_position).normalized()
 	is_targeting = true
 
-func _on_level_up():
-	pass
-
 func equip_weapon(weapon_to_add:Weapon):
 	equipped_weapons.append(weapon_to_add)
+	weapon_to_add.apply_upgrades()
 	
 func on_upgrade_acquired(upgrade:Dictionary):
 		var weapon:Weapon = get(upgrade.weapon)
-		var stat = upgrade.stat_to_upgrade
-		var current_value = weapon.get(stat)
-		var new_value = current_value + upgrade.add_amount
-		weapon.set(stat, new_value)
+		
+		match upgrade.stat_to_upgrade:
+			"damage":
+				weapon.damage_upgrades.append(upgrade.add_amount)
+			"speed":
+				weapon.speed_upgrades.append(upgrade.add_amount)
+			"count":
+				weapon.count_upgrades.append(upgrade.add_amount)
+			"cooldown":
+				weapon.cooldown_upgrades.append(upgrade.add_amount)
+		weapon.apply_upgrades()

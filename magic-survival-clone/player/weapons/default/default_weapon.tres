@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_g7wpr")
 weapon_scene = ExtResource("2_typw8")
-cooldown = 1.5
-speed = 400
-damage = 1.0
-count = 1
+base_damage = 1.0
+base_speed = 400
+base_count = 1
+base_cooldown = 1.5

@@ -6,7 +6,6 @@ var enemy_cap:int = 300
 var spawn_distance:int = 800
 @export var spawn_min:int = 1
 @export var spawn_max:int = 4
-@onready var spawn_rates = preload("res://world/spawn_rates.tres")
 
 var enemy_stats:Dictionary = {}
 @onready var default_enemy_stats = preload("res://enemies/default/default_enemy_stats.tres")
@@ -15,10 +14,10 @@ var enemy_stats:Dictionary = {}
 
 
 func _ready() -> void:
-	enemy_stats = {
-		default_enemy_stats: spawn_rates.default_enemy,
-		tough_enemy_stats: spawn_rates.tough_enemy,
-		speed_enemy_stats: spawn_rates.speed_enemy,
+	enemy_stats = {                     #spawn rates
+		default_enemy_stats: 0.65,
+		tough_enemy_stats: 0.2,
+		speed_enemy_stats: 0.15,
 	}
 
 func spawn_enemy():

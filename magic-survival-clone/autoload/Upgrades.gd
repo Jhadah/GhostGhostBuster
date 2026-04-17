@@ -3,11 +3,11 @@ extends Node
 signal upgrade_acquired(upgrade:Dictionary)
 
 var UpgradesList:Dictionary = {
-	#"MORE DAMAGE 1": {
-		#"weapon": "default_weapon",
-		#"stat_to_upgrade": "damage",
-		#"add_amount": 1
-	#}, 
+	"MORE DAMAGE 1": {
+		"weapon": "default_weapon",
+		"stat_to_upgrade": "damage",
+		"add_amount": 0.5
+	}, 
 	"MORE BULLETS": {
 		"weapon": "default_weapon",
 		"stat_to_upgrade": "count",
@@ -16,6 +16,12 @@ var UpgradesList:Dictionary = {
 	"MORE DAMAGE 2": {
 		"weapon": "default_weapon",
 		"stat_to_upgrade": "damage",
-		"add_amount": 2
-	}
+		"add_amount": 1
+	},
+		"MORE ATTACK SPEED 1": {
+			"weapon": "default_weapon",
+			"stat_to_upgrade": "cooldown",
+			"add_amount": 20
+		}
+	
 }
