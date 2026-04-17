@@ -34,3 +34,6 @@ func gain_exp():
 	
 	if current_exp >= max_exp:
 		level_up()
+
+func custom_timer(custom_time:float):
+	return get_tree().create_timer(custom_time).timeout
