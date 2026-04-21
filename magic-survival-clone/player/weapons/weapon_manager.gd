@@ -39,17 +39,17 @@ func equip_weapon(weapon_to_add:Weapon):
 	weapon_to_add.apply_upgrades()
 	
 func on_upgrade_acquired(upgrade:Dictionary, key_to_delete):
-		var weapon:Weapon = get(upgrade.weapon)
+		var weapon:Weapon = get(upgrade["weapon"])
 		
-		match upgrade.stat_to_upgrade:
+		match upgrade["stat_to_upgrade"]:
 			"damage":
-				weapon.damage_upgrades.append(upgrade.add_amount)
+				weapon.damage_upgrades.append(upgrade["add_amount"])
 			"speed":
-				weapon.speed_upgrades.append(upgrade.add_amount)
+				weapon.speed_upgrades.append(upgrade["add_amount"])
 			"count":
-				weapon.count_upgrades.append(upgrade.add_amount)
+				weapon.count_upgrades.append(upgrade["add_amount"])
 			"cooldown":
-				weapon.cooldown_upgrades.append(upgrade.add_amount)
+				weapon.cooldown_upgrades.append(upgrade["add_amount"])
 			"unlock":
 				equip_weapon(weapon)
 				Upgrades.delete_from_pool(key_to_delete)

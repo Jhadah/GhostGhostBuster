@@ -7,14 +7,16 @@ var spawn_distance:int = 800
 @export var spawn_min:int = 1
 @export var spawn_max:int = 4
 
-var enemy_stats:Dictionary = {}
+var spawn_rates:Dictionary = {}
 @onready var default_enemy_stats = preload("res://enemies/default/default_enemy_stats.tres")
 @onready var tough_enemy_stats = preload("res://enemies/tough/tough_enemy_stats.tres")
 @onready var speed_enemy_stats = preload("res://enemies/speed/speed_enemy_stats.tres")
 
 
 func _ready() -> void:
-	enemy_stats = {                     #spawn rates
+	
+	
+	spawn_rates = {                     #spawn rates
 		default_enemy_stats: 0.65,
 		tough_enemy_stats: 0.2,
 		speed_enemy_stats: 0.15,
@@ -38,10 +40,10 @@ func get_random_enemy_stats():
 	var rand:float = randf()
 	var acc:float = 0
 	
-	for res in enemy_stats:
-		acc += enemy_stats[res]
+	for val in spawn_rates:
+		acc += spawn_rates[val]
 		if rand <= acc:
-			return res
+			return val
 
 func _on_spawn_timer_timeout() -> void:
 	var amount_of_enemies = randi_range(spawn_min,spawn_max)

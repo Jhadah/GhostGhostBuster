@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=3 format=3 uid="uid://hpdto614k84b"]
+
+[ext_resource type="Script" uid="uid://cant4rnd4e8c" path="res://player/weapons/weapon.gd" id="1_aelwa"]
+[ext_resource type="PackedScene" uid="uid://swq3jmyxgln0" path="res://player/weapons/default/bullet.tscn" id="2_ep3ye"]
+
+[resource]
+script = ExtResource("1_aelwa")
+weapon_scene = ExtResource("2_ep3ye")
+base_damage = 0.7
+base_speed = 400
+base_count = 1
+base_cooldown = 2.0
+base_pellets_number = 3
+metadata/_custom_type_script = "uid://cant4rnd4e8c"

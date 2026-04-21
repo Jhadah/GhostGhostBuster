@@ -7,12 +7,14 @@ extends Resource
 @export var base_speed:int
 @export var base_count:int
 @export var base_cooldown:float
+@export var base_pellet_number:int
 @export var cooldown_min = 0.5 
 
 var damage:float = base_damage
 var speed:float = base_speed
 var count:int = base_count
 var cooldown:float = base_cooldown
+var pellet_number:int = base_pellet_number
 
 var cooldown_timer = 0
 

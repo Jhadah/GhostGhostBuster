@@ -8,14 +8,9 @@ var UpgradesList:Dictionary = {
 		"stat_to_upgrade": "damage",
 		"add_amount": 0.5
 	}, 
-	"MORE BULLETS": {
+	"MORE FIREBALLS": {
 		"weapon": "default_weapon",
 		"stat_to_upgrade": "count",
-		"add_amount": 1
-	},
-	"MORE DAMAGE 2": {
-		"weapon": "default_weapon",
-		"stat_to_upgrade": "damage",
 		"add_amount": 1
 	},
 	"MORE ATTACK SPEED 1": {
@@ -24,8 +19,8 @@ var UpgradesList:Dictionary = {
 		"add_amount": 20
 	},
 	"UNLOCK LASER": {
-		"weapon": "laser",
-		"stat_to_unlock": "unlock"
+		"weapon": "laser_weapon",
+		"stat_to_upgrade": "unlock"
 	}
 }
 

@@ -27,8 +27,8 @@ func level_up():
 	current_exp = 0
 
 func gain_exp():
-	#current_exp += max((max_exp / level) / 4, max_exp * 0.05)
-	current_exp = 100    #godmode per debug
+	current_exp += max((max_exp / level) / 4, max_exp * 0.05)
+	#current_exp += 34    #godmode per debug
 	exp_gained.emit()
 	
 	if current_exp >= max_exp:

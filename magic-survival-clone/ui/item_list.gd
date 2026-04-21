@@ -1,10 +1,11 @@
 extends ItemList
 
-var keys = Upgrades.UpgradesList.keys()
+var keys:Array
 
 func appear():
 	visible = true
 	
+	keys = Upgrades.UpgradesList.keys()
 	keys.shuffle()
 	var upgrade1 = keys[0]
 	var upgrade2 = keys[1]
