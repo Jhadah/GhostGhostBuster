@@ -1,12 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://cys0el5hqfy7s"]
+[gd_scene load_steps=8 format=3 uid="uid://cys0el5hqfy7s"]
 
 [ext_resource type="Script" uid="uid://d28blbefnj5xk" path="res://ui/progress_bar.gd" id="1_1a1bo"]
 [ext_resource type="Script" uid="uid://0idovq2m3e3w" path="res://ui/ui.gd" id="1_vkava"]
 [ext_resource type="Script" uid="uid://bo7n7scec8ylh" path="res://ui/level_label.gd" id="2_ks8t7"]
 [ext_resource type="Script" uid="uid://cbwieh7k4o5y1" path="res://ui/item_list.gd" id="3_wl5ax"]
+[ext_resource type="Texture2D" uid="uid://giwfw22mk24t" path="res://player/weapons/default/fireball shot.png" id="4_tf0e0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wl5ax"]
 font_size = 40
+
+[sub_resource type="Theme" id="Theme_obcwv"]
+default_font_size = 25
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -35,15 +39,22 @@ label_settings = SubResource("LabelSettings_wl5ax")
 script = ExtResource("2_ks8t7")
 
 [node name="ItemList" type="ItemList" parent="."]
-visible = false
 layout_mode = 0
-offset_left = 322.0
-offset_top = 78.0
-offset_right = 585.0
-offset_bottom = 158.0
-max_columns = 2
+offset_left = 324.0
+offset_top = 265.0
+offset_right = 661.0
+offset_bottom = 503.0
+theme = SubResource("Theme_obcwv")
+max_text_lines = 3
+item_count = 2
+max_columns = 3
 same_column_width = true
+fixed_column_width = 160
 icon_mode = 0
+item_0/text = "elemento1"
+item_0/icon = ExtResource("4_tf0e0")
+item_1/text = "elemento2"
+item_1/icon = ExtResource("4_tf0e0")
 script = ExtResource("3_wl5ax")
 
 [connection signal="item_selected" from="ItemList" to="ItemList" method="_on_item_selected"]

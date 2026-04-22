@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var dir:Vector2
-var speed:int
+var speed:float
 var damage:float
 
 func _ready() -> void:

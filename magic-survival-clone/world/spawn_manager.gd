@@ -13,9 +13,7 @@ var spawn_rates:Dictionary = {}
 @onready var speed_enemy_stats = preload("res://enemies/speed/speed_enemy_stats.tres")
 
 
-func _ready() -> void:
-	
-	
+func _ready() -> void:	
 	spawn_rates = {                     #spawn rates
 		default_enemy_stats: 0.65,
 		tough_enemy_stats: 0.2,

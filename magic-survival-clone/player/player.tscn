@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dw1lts7yopg36"]
+[gd_scene load_steps=15 format=3 uid="uid://dw1lts7yopg36"]
 
 [ext_resource type="Script" uid="uid://bb1witou4pb1e" path="res://player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://cloamtash80jf" path="res://world/shadow.png" id="2_g6k8r"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cw4tmmw28xnlf" path="res://player/sprites/player-side.png" id="4_qlg0r"]
 [ext_resource type="Resource" uid="uid://bcym02nbpaogg" path="res://player/weapons/default/default_weapon.tres" id="4_tuyoq"]
 [ext_resource type="Resource" uid="uid://nyk3pmlfc5rx" path="res://player/weapons/laser/laser_weapon.tres" id="5_qlg0r"]
+[ext_resource type="Resource" uid="uid://hpdto614k84b" path="res://player/weapons/shotgun/shotgun_weapon.tres" id="7_boad6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i3pqv"]
 radius = 8.0
@@ -84,6 +85,7 @@ shape = SubResource("CircleShape2D_dqkch")
 script = ExtResource("4_dqkch")
 default_weapon = ExtResource("4_tuyoq")
 laser_weapon = ExtResource("5_qlg0r")
+shotgun_weapon = ExtResource("7_boad6")
 
 [connection signal="body_entered" from="detection-range" to="." method="_on_detection_range_body_entered"]
 [connection signal="body_exited" from="detection-range" to="." method="_on_detection_range_body_exited"]

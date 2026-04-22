@@ -5,13 +5,12 @@ extends Node
 
 @export var default_weapon:Weapon
 @export var laser_weapon:Weapon
+@export var shotgun_weapon:Weapon
 
 var equipped_weapons:Array[Weapon] = []
 var is_targeting:bool = false
 
 func _ready() -> void:
-	Upgrades.upgrade_acquired.connect(on_upgrade_acquired)
-	
 	equip_weapon(default_weapon)
 
 func _process(delta: float) -> void:
@@ -36,21 +35,19 @@ func update_target(nearest_enemy:Node2D):
 
 func equip_weapon(weapon_to_add:Weapon):
 	equipped_weapons.append(weapon_to_add)
-	weapon_to_add.apply_upgrades()
-	
+
 func on_upgrade_acquired(upgrade:Dictionary, key_to_delete):
 		var weapon:Weapon = get(upgrade["weapon"])
 		
 		match upgrade["stat_to_upgrade"]:
 			"damage":
-				weapon.damage_upgrades.append(upgrade["add_amount"])
+				weapon.damage += upgrade["amount"]
 			"speed":
-				weapon.speed_upgrades.append(upgrade["add_amount"])
+				weapon.speed += upgrade["amount"]
 			"count":
-				weapon.count_upgrades.append(upgrade["add_amount"])
+				weapon.count += upgrade["amount"]
 			"cooldown":
-				weapon.cooldown_upgrades.append(upgrade["add_amount"])
+				weapon.cooldown = max(weapon.cooldown_min, weapon.cooldown / (1 + (upgrade["amount"]/100)))
 			"unlock":
 				equip_weapon(weapon)
-				Upgrades.delete_from_pool(key_to_delete)
-		weapon.apply_upgrades()
+				Upgrades.delete_from_pool(key_to_delete) 
