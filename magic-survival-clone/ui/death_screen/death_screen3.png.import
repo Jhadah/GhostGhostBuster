@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by6y7cjtenqn6"
-path="res://.godot/imported/WhatsApp Image 2026-04-20 at 12.13.23.jpeg-5cb6ed79c8d830d494c5ae98125f4769.ctex"
+uid="uid://dhcap85m8onj8"
+path="res://.godot/imported/death_screen3.png-08c6da3d4138ea2c7d3cf76a819ba90b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://WhatsApp Image 2026-04-20 at 12.13.23.jpeg"
-dest_files=["res://.godot/imported/WhatsApp Image 2026-04-20 at 12.13.23.jpeg-5cb6ed79c8d830d494c5ae98125f4769.ctex"]
+source_file="res://ui/death_screen/death_screen3.png"
+dest_files=["res://.godot/imported/death_screen3.png-08c6da3d4138ea2c7d3cf76a819ba90b.ctex"]
 
 [params]
 

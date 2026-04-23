@@ -1,25 +1,27 @@
 extends CharacterBody2D
 
 #--movement--#
-@export var speed:int = 100
+@export var speed:float = 100.0
+@export var hp:float = 5.0
 var is_facing_left:bool = true
+var is_dead:bool = false
 
 #--attack system--# 
 var enemies_in_range:Array[CharacterBody2D] = []
-@onready var weapon:Node = $"weapon-manager"
+@onready var weapon_manager:Node = $"weapon-manager"
 
 func _ready() -> void:
 	Global.Player = self
 	$"animation".play("player-side")
 
-func _physics_process(_delta: float) -> void:
-	move_and_slide()
-	get_nearest_enemy_direction()
-	
 func _input(_event: InputEvent) -> void:
 	var dir = Input.get_vector("left","right","up","down")
 	velocity = dir * speed
 	manage_sprite_orientation(dir)
+
+func _physics_process(_delta: float) -> void:
+	move_and_slide()
+	get_nearest_enemy_direction()
 
 func manage_sprite_orientation(dir):
 	if dir.x < 0:
@@ -45,5 +47,21 @@ func get_nearest_enemy_direction():
 		if enemy_dist < min_dist:
 			nearest_enemy = enemy
 			min_dist = enemy_dist
-	weapon.update_target(nearest_enemy)
+	weapon_manager.update_target(nearest_enemy)
 #endregion --shooting system--#
+
+func _on_hurtbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemy"):
+		take_damage()
+
+func take_damage():
+	hp -=1
+	if hp <= 0:
+		Global.player_died.emit()
+		die()
+
+func die():
+	is_dead = true
+	visible = false
+	set_physics_process(false)
+	

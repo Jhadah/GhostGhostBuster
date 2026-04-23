@@ -46,4 +46,6 @@ func get_random_enemy_stats():
 func _on_spawn_timer_timeout() -> void:
 	var amount_of_enemies = randi_range(spawn_min,spawn_max)
 	for i in range(amount_of_enemies):
+		if Global.Player.is_dead:
+			return
 		spawn_enemy()

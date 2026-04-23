@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dw1lts7yopg36"]
+[gd_scene load_steps=17 format=3 uid="uid://dw1lts7yopg36"]
 
 [ext_resource type="Script" uid="uid://bb1witou4pb1e" path="res://player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://cloamtash80jf" path="res://world/shadow.png" id="2_g6k8r"]
@@ -7,10 +7,11 @@
 [ext_resource type="Resource" uid="uid://bcym02nbpaogg" path="res://player/weapons/default/default_weapon.tres" id="4_tuyoq"]
 [ext_resource type="Resource" uid="uid://nyk3pmlfc5rx" path="res://player/weapons/laser/laser_weapon.tres" id="5_qlg0r"]
 [ext_resource type="Resource" uid="uid://hpdto614k84b" path="res://player/weapons/shotgun/shotgun_weapon.tres" id="7_boad6"]
+[ext_resource type="Script" uid="uid://hnewb06sw4jy" path="res://player/hurtbox.gd" id="8_rgyib"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i3pqv"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rgyib"]
 radius = 8.0
-height = 24.0
+height = 21.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
 atlas = ExtResource("4_qlg0r")
@@ -51,20 +52,18 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_dqkch"]
 radius = 213.05867
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hg6s5"]
+height = 25.0
+
 [node name="player" type="CharacterBody2D"]
 z_index = 2
 scale = Vector2(2, 2)
+collision_mask = 2
 script = ExtResource("1_onrkg")
 
-[node name="collision-shape" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -2)
-shape = SubResource("CapsuleShape2D_i3pqv")
-
-[node name="shadow" type="Sprite2D" parent="."]
-z_index = 1
-texture_filter = 1
-position = Vector2(0, 9)
-texture = ExtResource("2_g6k8r")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -1.5)
+shape = SubResource("CapsuleShape2D_rgyib")
 
 [node name="animation" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -75,7 +74,7 @@ frame_progress = 0.43092597
 [node name="detection-range" type="Area2D" parent="."]
 visible = false
 z_index = 2
-collision_mask = 3
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection-range"]
 position = Vector2(0, -0.5)
@@ -87,5 +86,20 @@ default_weapon = ExtResource("4_tuyoq")
 laser_weapon = ExtResource("5_qlg0r")
 shotgun_weapon = ExtResource("7_boad6")
 
+[node name="hurtbox" type="Area2D" parent="."]
+collision_mask = 2
+script = ExtResource("8_rgyib")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(-1.5, -1.5)
+shape = SubResource("CapsuleShape2D_hg6s5")
+
+[node name="shadow" type="Sprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(0, 9)
+texture = ExtResource("2_g6k8r")
+
 [connection signal="body_entered" from="detection-range" to="." method="_on_detection_range_body_entered"]
 [connection signal="body_exited" from="detection-range" to="." method="_on_detection_range_body_exited"]
+[connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]

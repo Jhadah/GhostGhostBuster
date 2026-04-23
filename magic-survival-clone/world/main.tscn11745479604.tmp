@@ -11,7 +11,6 @@
 
 [node name="player" parent="." instance=ExtResource("1_ig7tw")]
 position = Vector2(459, 445)
-hp = 1.0
 
 [node name="main_camera" type="Camera2D" parent="player"]
 position = Vector2(-229.5, -222.5)
@@ -34,8 +33,6 @@ process_mode = 3
 layer = -1
 
 [node name="floor" type="Sprite2D" parent="floor-canvas-layer"]
-texture_filter = 1
-texture_repeat = 2
 position = Vector2(459, 445)
 texture = ExtResource("1_tbgi4")
 region_enabled = true

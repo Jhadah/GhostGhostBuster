@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cys0el5hqfy7s" path="res://ui/ui.tscn" id="1_i1eo7"]
 [ext_resource type="PackedScene" uid="uid://dw1lts7yopg36" path="res://player/player.tscn" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://dsd8farb12tq7" path="res://world/floor.jpg" id="1_tbgi4"]
-[ext_resource type="Script" uid="uid://etwwd8trva0b" path="res://world/floor.gd" id="4_jyhfs"]
+[ext_resource type="Script" uid="uid://bircp6sntmnjm" path="res://world/floor.gd" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://do18olciddjxu" path="res://world/spawn_manager.gd" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bg6tyqxdjyq8b" path="res://enemies/enemy.tscn" id="5_tbgi4"]
 
@@ -11,7 +11,6 @@
 
 [node name="player" parent="." instance=ExtResource("1_ig7tw")]
 position = Vector2(459, 445)
-hp = 1.0
 
 [node name="main_camera" type="Camera2D" parent="player"]
 position = Vector2(-229.5, -222.5)
@@ -31,15 +30,17 @@ process_mode = 3
 [node name="UI" parent="UI-canvas-layer" instance=ExtResource("1_i1eo7")]
 
 [node name="floor-canvas-layer" type="CanvasLayer" parent="."]
-layer = -1
 
 [node name="floor" type="Sprite2D" parent="floor-canvas-layer"]
+z_index = -1
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(459, 445)
+position = Vector2(-114, -10)
+scale = Vector2(0.7506193, 0.6189515)
 texture = ExtResource("1_tbgi4")
+centered = false
 region_enabled = true
-region_rect = Rect2(100, 100, 0, 0)
+region_rect = Rect2(0, 0, 1536, 1488)
 script = ExtResource("4_jyhfs")
 
 [connection signal="timeout" from="spawn_manager/spawn_timer" to="spawn_manager" method="_on_spawn_timer_timeout"]

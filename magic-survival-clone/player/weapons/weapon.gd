@@ -17,6 +17,8 @@ func can_shoot():
 	return cooldown_timer <= 0
 
 func shoot(dir:Vector2, shooter:Node2D):
+	if Global.Player.is_dead:
+		return
 	cooldown_timer = cooldown
 	perform_shoot(dir, shooter)
 

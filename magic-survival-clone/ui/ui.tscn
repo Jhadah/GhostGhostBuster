@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cys0el5hqfy7s"]
+[gd_scene load_steps=9 format=3 uid="uid://cys0el5hqfy7s"]
 
-[ext_resource type="Script" uid="uid://d28blbefnj5xk" path="res://ui/progress_bar.gd" id="1_1a1bo"]
 [ext_resource type="Script" uid="uid://0idovq2m3e3w" path="res://ui/ui.gd" id="1_vkava"]
 [ext_resource type="Script" uid="uid://bo7n7scec8ylh" path="res://ui/level_label.gd" id="2_ks8t7"]
+[ext_resource type="Script" uid="uid://d2i5gg68y2qm" path="res://ui/basic_ui.gd" id="2_obcwv"]
 [ext_resource type="Script" uid="uid://cbwieh7k4o5y1" path="res://ui/item_list.gd" id="3_wl5ax"]
+[ext_resource type="Script" uid="uid://djx3t4h2q4jr" path="res://ui/death_screen/death_screen.gd" id="5_obcwv"]
+[ext_resource type="Texture2D" path="res://ui/death_screen1.png" id="6_bo1jx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wl5ax"]
 font_size = 40
@@ -20,14 +22,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vkava")
 
-[node name="progress-bar" type="ProgressBar" parent="."]
+[node name="basic_ui" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_obcwv")
+
+[node name="progress-bar" type="ProgressBar" parent="basic_ui"]
 layout_mode = 0
 offset_right = 924.0
 offset_bottom = 27.0
 show_percentage = false
-script = ExtResource("1_1a1bo")
 
-[node name="level-label" type="Label" parent="."]
+[node name="level-label" type="Label" parent="basic_ui"]
 layout_mode = 0
 offset_left = 36.0
 offset_top = 46.0
@@ -37,7 +44,7 @@ text = "1"
 label_settings = SubResource("LabelSettings_wl5ax")
 script = ExtResource("2_ks8t7")
 
-[node name="ItemList" type="ItemList" parent="."]
+[node name="ItemList" type="ItemList" parent="basic_ui"]
 visible = false
 layout_mode = 0
 offset_left = 324.0
@@ -53,6 +60,7 @@ icon_mode = 0
 script = ExtResource("3_wl5ax")
 
 [node name="pause_menu" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -81,6 +89,28 @@ offset_bottom = 549.0
 text = "EXIT
 "
 
-[connection signal="item_selected" from="ItemList" to="ItemList" method="_on_item_selected"]
+[node name="death screen" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_obcwv")
+
+[node name="dark_filter" type="ColorRect" parent="death screen"]
+layout_mode = 0
+offset_right = 924.0
+offset_bottom = 892.0
+color = Color(0, 0, 0, 0.35686275)
+
+[node name="death_word" type="TextureRect" parent="death screen"]
+custom_minimum_size = Vector2(70, 50)
+layout_mode = 0
+offset_left = 295.0
+offset_top = 254.0
+offset_right = 638.0
+offset_bottom = 431.0
+texture = ExtResource("6_bo1jx")
+
+[connection signal="item_selected" from="basic_ui/ItemList" to="basic_ui/ItemList" method="_on_item_selected"]
 [connection signal="pressed" from="pause_menu/resume_button" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="pause_menu/exit_button" to="." method="_on_exit_button_pressed"]
