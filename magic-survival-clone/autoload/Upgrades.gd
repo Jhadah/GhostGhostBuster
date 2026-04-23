@@ -6,31 +6,36 @@ var UpgradesList:Dictionary = {
 	"MORE DAMAGE": {
 		"weapon": "default_weapon",
 		"stat_to_upgrade": "damage",
-		"add_amount": 0.5,
-		"icon": Image
+		"amount": 0.5,
+		"icon": preload("res://ui/upgrade_icons/default_more_damage.png")
 	}, 
 	"MORE FIREBALLS": {
 		"weapon": "default_weapon",
 		"stat_to_upgrade": "count",
-		"add_amount": 1
+		"amount": 1,
+		"icon": preload("res://ui/upgrade_icons/default_more_damage.png")
 	},
 	"MORE ATTACK SPEED": {
 		"weapon": "default_weapon",
 		"stat_to_upgrade": "cooldown",
-		"add_amount": 20
+		"amount": 20,
+		"icon": preload("res://ui/upgrade_icons/default_more_damage.png")
 	},
 	"MORE PELLETS": {
 		"weapon": "shotgun_weapon",
 		"stat_to_upgrade": "pellet_number",
-		"add_amount": 2
+		"amount": 2,
+		"icon": preload("res://ui/upgrade_icons/default_more_damage.png")
 	},
 	"UNLOCK LASER": {
 		"weapon": "laser_weapon",
-		"stat_to_upgrade": "unlock"
+		"stat_to_upgrade": "unlock",
+		"icon": preload("res://ui/upgrade_icons/default_more_damage.png")
 	},
 	"UNLOCK SHOTGUN": {
 		"weapon": "shotgun_weapon",
-		"stat_to_upgrade": "unlock"
+		"stat_to_upgrade": "unlock",
+		"icon": preload("res://ui/upgrade_icons/default_more_damage.png")
 	}
 }
 

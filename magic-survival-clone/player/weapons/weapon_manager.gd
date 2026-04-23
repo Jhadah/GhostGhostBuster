@@ -11,6 +11,7 @@ var equipped_weapons:Array[Weapon] = []
 var is_targeting:bool = false
 
 func _ready() -> void:
+	Upgrades.upgrade_acquired.connect(on_upgrade_acquired)
 	equip_weapon(default_weapon)
 
 func _process(delta: float) -> void:
@@ -42,12 +43,15 @@ func on_upgrade_acquired(upgrade:Dictionary, key_to_delete):
 		match upgrade["stat_to_upgrade"]:
 			"damage":
 				weapon.damage += upgrade["amount"]
-			"speed":
-				weapon.speed += upgrade["amount"]
-			"count":
-				weapon.count += upgrade["amount"]
 			"cooldown":
 				weapon.cooldown = max(weapon.cooldown_min, weapon.cooldown / (1 + (upgrade["amount"]/100)))
+			"speed": #default weapon, shotgun weapon
+				weapon.proj_speed += upgrade["amount"]
+			"count": #default weapon
+				weapon.count += upgrade["amount"]
+			"pellet_number": #shotgun weapon
+				weapon.pellet_number += upgrade["amount"]
 			"unlock":
-				equip_weapon(weapon)
-				Upgrades.delete_from_pool(key_to_delete) 
+				if !equipped_weapons.has(weapon):
+					equip_weapon(weapon)
+					Upgrades.delete_from_pool(key_to_delete) 

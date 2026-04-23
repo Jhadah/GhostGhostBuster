@@ -4,19 +4,20 @@ var keys:Array
 
 func appear():
 	visible = true
+	get_tree().paused = true
 	
 	keys = Upgrades.UpgradesList.keys()
 	keys.shuffle()
-	var upgrade1 = keys[0]
-	var upgrade2 = keys[1]
 	
-	var item1 = add_item(upgrade1)
-	set_item_metadata(item1, Upgrades.UpgradesList[upgrade1])
-	var item2 = add_item(upgrade2)
-	set_item_metadata(item2, Upgrades.UpgradesList[upgrade2])
+	for i in range(2):
+		var upgrade = keys[i]
+		var item = add_item(upgrade, Upgrades.UpgradesList[upgrade]["icon"])
+		
+		set_item_metadata(item, Upgrades.UpgradesList[upgrade])
 
 func disappear():
 	visible = false
+	get_tree().paused = false
 	clear()
 
 func _on_item_selected(index: int) -> void:

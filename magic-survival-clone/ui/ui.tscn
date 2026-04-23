@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cys0el5hqfy7s"]
+[gd_scene load_steps=7 format=3 uid="uid://cys0el5hqfy7s"]
 
 [ext_resource type="Script" uid="uid://d28blbefnj5xk" path="res://ui/progress_bar.gd" id="1_1a1bo"]
 [ext_resource type="Script" uid="uid://0idovq2m3e3w" path="res://ui/ui.gd" id="1_vkava"]
 [ext_resource type="Script" uid="uid://bo7n7scec8ylh" path="res://ui/level_label.gd" id="2_ks8t7"]
 [ext_resource type="Script" uid="uid://cbwieh7k4o5y1" path="res://ui/item_list.gd" id="3_wl5ax"]
-[ext_resource type="Texture2D" uid="uid://giwfw22mk24t" path="res://player/weapons/default/fireball shot.png" id="4_tf0e0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wl5ax"]
 font_size = 40
@@ -39,6 +38,7 @@ label_settings = SubResource("LabelSettings_wl5ax")
 script = ExtResource("2_ks8t7")
 
 [node name="ItemList" type="ItemList" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 324.0
 offset_top = 265.0
@@ -46,15 +46,41 @@ offset_right = 661.0
 offset_bottom = 503.0
 theme = SubResource("Theme_obcwv")
 max_text_lines = 3
-item_count = 2
 max_columns = 3
 same_column_width = true
 fixed_column_width = 160
 icon_mode = 0
-item_0/text = "elemento1"
-item_0/icon = ExtResource("4_tf0e0")
-item_1/text = "elemento2"
-item_1/icon = ExtResource("4_tf0e0")
 script = ExtResource("3_wl5ax")
 
+[node name="pause_menu" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="dark_filter" type="ColorRect" parent="pause_menu"]
+layout_mode = 0
+offset_right = 924.0
+offset_bottom = 892.0
+color = Color(0, 0, 0, 0.35686275)
+
+[node name="resume_button" type="Button" parent="pause_menu"]
+layout_mode = 0
+offset_left = 403.0
+offset_top = 405.0
+offset_right = 511.0
+offset_bottom = 465.0
+text = "RESUME
+"
+
+[node name="exit_button" type="Button" parent="pause_menu"]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 489.0
+offset_right = 513.0
+offset_bottom = 549.0
+text = "EXIT
+"
+
 [connection signal="item_selected" from="ItemList" to="ItemList" method="_on_item_selected"]
+[connection signal="pressed" from="pause_menu/resume_button" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="pause_menu/exit_button" to="." method="_on_exit_button_pressed"]
