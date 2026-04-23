@@ -12,6 +12,7 @@ func perform_shoot(dir:Vector2, shooter:Node2D):
 		fireball.dir = dir
 		fireball.speed = proj_speed
 		fireball.damage = damage
+		fireball.texture = texture
 		
 		shooter.get_parent().add_child(fireball)
 		fireball.global_position = shooter.global_position

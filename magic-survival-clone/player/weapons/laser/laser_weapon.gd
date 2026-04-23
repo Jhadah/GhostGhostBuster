@@ -7,6 +7,7 @@ func perform_shoot(dir:Vector2, shooter:Node2D):
 	laser.dir = dir 
 	laser.shooter = shooter
 	laser.damage = damage
+	laser.texture = texture
 	
 	shooter.get_parent().add_child(laser)
 	laser.position = shooter.global_position

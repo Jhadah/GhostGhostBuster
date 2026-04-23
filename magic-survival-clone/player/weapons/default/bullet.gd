@@ -3,8 +3,10 @@ extends CharacterBody2D
 var dir:Vector2
 var speed:float
 var damage:float
+var texture:SpriteFrames
 
 func _ready() -> void:
+	$animation.sprite_frames = texture
 	$animation.play("default")
 	rotation = dir.angle() - PI #perchè lo sprite punta a sinistra
 

@@ -1,7 +1,23 @@
-[gd_resource type="Resource" script_class="LaserWeapon" load_steps=3 format=3 uid="uid://nyk3pmlfc5rx"]
+[gd_resource type="Resource" script_class="LaserWeapon" load_steps=6 format=3 uid="uid://nyk3pmlfc5rx"]
 
 [ext_resource type="Script" uid="uid://ctowmhvlap0" path="res://player/weapons/laser/laser_weapon.gd" id="1_8435d"]
 [ext_resource type="PackedScene" uid="uid://b73i1tppyeqtb" path="res://player/weapons/laser/laser.tscn" id="2_2xaxt"]
+[ext_resource type="Texture2D" uid="uid://x18wj2to1mo1" path="res://player/weapons/laser/Senza nome.png" id="2_qubqu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6e7ye"]
+atlas = ExtResource("2_qubqu")
+region = Rect2(0, 0, 16, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8rbmx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6e7ye")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [resource]
 script = ExtResource("1_8435d")
@@ -9,4 +25,5 @@ weapon_scene = ExtResource("2_2xaxt")
 damage = 4.0
 cooldown = 5.0
 cooldown_min = 1.0
+texture = SubResource("SpriteFrames_8rbmx")
 metadata/_custom_type_script = "uid://ctowmhvlap0"

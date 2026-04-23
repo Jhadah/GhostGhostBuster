@@ -1,54 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://swq3jmyxgln0"]
+[gd_scene load_steps=3 format=3 uid="uid://swq3jmyxgln0"]
 
 [ext_resource type="Script" uid="uid://bnhpn65fx5wgs" path="res://player/weapons/default/bullet.gd" id="1_y25gk"]
-[ext_resource type="Texture2D" uid="uid://giwfw22mk24t" path="res://player/weapons/default/fireball shot.png" id="2_y25gk"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y25gk"]
-atlas = ExtResource("2_y25gk")
-region = Rect2(30, 0, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l5glv"]
-atlas = ExtResource("2_y25gk")
-region = Rect2(0, 0, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eoqba"]
-atlas = ExtResource("2_y25gk")
-region = Rect2(30, 30, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qncy5"]
-atlas = ExtResource("2_y25gk")
-region = Rect2(0, 30, 30, 30)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_l5glv"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y25gk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l5glv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eoqba")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qncy5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eoqba")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l5glv")
-}],
-"loop": true,
-"name": &"default",
-"speed": 9.0
-}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eoqba"]
 radius = 7.071068
 
-[node name="fireball" type="CharacterBody2D"]
+[node name="bullet" type="CharacterBody2D"]
 z_index = 1
 collision_layer = 4
 collision_mask = 2
@@ -58,8 +15,6 @@ script = ExtResource("1_y25gk")
 z_index = 1
 texture_filter = 1
 scale = Vector2(1.5333333, 1.5333331)
-sprite_frames = SubResource("SpriteFrames_l5glv")
-frame_progress = 0.04140607
 
 [node name="collision-shape" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)

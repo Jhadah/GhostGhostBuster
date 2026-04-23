@@ -15,6 +15,7 @@ func perform_shoot(dir:Vector2, shooter:Node2D):
 		bullet.dir = dir.rotated((spread_step * i) -  half_spread)
 		bullet.speed = proj_speed
 		bullet.damage = damage
+		bullet.texture = texture
 		
 		shooter.get_parent().add_child(bullet)
 		bullet.global_position = shooter.global_position

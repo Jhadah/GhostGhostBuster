@@ -16,10 +16,17 @@ func _physics_process(_delta: float) -> void:
 		dir = -dir
 	velocity = dir * stats.speed
 	move_and_slide()
+	
+	manage_facing_direction()
 
 func take_damage(amount:float):
 	current_hp -= amount
 	if current_hp <= 0:
 		Global.enemy_died()
 		queue_free()
-	
+
+func manage_facing_direction():
+	if dir > Vector2(0,0):
+		$animation.flip_h = true
+	else:
+		$animation.flip_h = false

@@ -61,7 +61,7 @@ scale = Vector2(2, 2)
 collision_mask = 2
 script = ExtResource("1_onrkg")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="collision" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, -1.5)
 shape = SubResource("CapsuleShape2D_rgyib")
 
@@ -80,12 +80,6 @@ collision_mask = 2
 position = Vector2(0, -0.5)
 shape = SubResource("CircleShape2D_dqkch")
 
-[node name="weapon-manager" type="Node" parent="."]
-script = ExtResource("4_dqkch")
-default_weapon = ExtResource("4_tuyoq")
-laser_weapon = ExtResource("5_qlg0r")
-shotgun_weapon = ExtResource("7_boad6")
-
 [node name="hurtbox" type="Area2D" parent="."]
 collision_mask = 2
 script = ExtResource("8_rgyib")
@@ -99,6 +93,12 @@ z_index = 1
 texture_filter = 1
 position = Vector2(0, 9)
 texture = ExtResource("2_g6k8r")
+
+[node name="weapon-manager" type="Node" parent="."]
+script = ExtResource("4_dqkch")
+default_weapon = ExtResource("4_tuyoq")
+laser_weapon = ExtResource("5_qlg0r")
+shotgun_weapon = ExtResource("7_boad6")
 
 [connection signal="body_entered" from="detection-range" to="." method="_on_detection_range_body_entered"]
 [connection signal="body_exited" from="detection-range" to="." method="_on_detection_range_body_exited"]
