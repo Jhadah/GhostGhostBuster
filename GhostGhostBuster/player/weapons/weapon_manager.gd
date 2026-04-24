@@ -12,7 +12,7 @@ var is_targeting:bool = false
 
 func _ready() -> void:
 	Upgrades.upgrade_acquired.connect(on_upgrade_acquired)
-	equip_weapon(laser_weapon)
+	equip_weapon(default_weapon)
 
 func _process(delta: float) -> void:
 	for weapon in equipped_weapons:

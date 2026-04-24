@@ -55,7 +55,7 @@ func _on_hurtbox_body_entered(body: Node2D) -> void:
 		take_damage()
 
 func take_damage():
-	hp -=1
+	hp -= 1
 	if hp <= 0:
 		Global.player_died.emit()
 		die()

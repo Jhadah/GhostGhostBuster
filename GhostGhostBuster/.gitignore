@@ -1,3 +1,17 @@
-# Godot 4+ specific ignores
 .godot/
-/android/
+.tmp/
+.import/
+
+*.exe
+*.pck
+*.zip
+*.app
+*.ipa
+*.apk
+*.pkh
+*.exp
+*.lib
+*.pdb
+
+.fscache/
+export_presets.cfg
