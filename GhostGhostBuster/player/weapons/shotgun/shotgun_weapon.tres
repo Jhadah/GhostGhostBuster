@@ -21,6 +21,7 @@ animations = [{
 
 [resource]
 script = ExtResource("1_aelwa")
+proj_speed = 200.0
 weapon_scene = ExtResource("2_ep3ye")
 damage = 1.0
 cooldown = 2.0

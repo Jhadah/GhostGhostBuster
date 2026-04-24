@@ -10,10 +10,11 @@
 [node name="main" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("1_ig7tw")]
-position = Vector2(459, 445)
+position = Vector2(161, 90)
+speed = 50.0
 
 [node name="main_camera" type="Camera2D" parent="player"]
-position = Vector2(-229.5, -222.5)
+position = Vector2(-80.5, -45)
 anchor_mode = 0
 
 [node name="spawn_manager" type="Node2D" parent="."]
@@ -35,9 +36,10 @@ layer = -1
 [node name="floor" type="Sprite2D" parent="floor-canvas-layer"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(459, 445)
+position = Vector2(160, 90)
 texture = ExtResource("1_tbgi4")
 region_enabled = true
+region_rect = Rect2(0, 0, 320, 180)
 script = ExtResource("4_jyhfs")
 
 [connection signal="timeout" from="spawn_manager/spawn_timer" to="spawn_manager" method="_on_spawn_timer_timeout"]

@@ -8,10 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://8et6qydy3jps" path="res://ui/death_screen/death_screen1.png" id="6_obcwv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wl5ax"]
-font_size = 40
+font_size = 9
 
 [sub_resource type="Theme" id="Theme_obcwv"]
-default_font_size = 25
+default_font_size = 9
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -30,33 +30,31 @@ script = ExtResource("2_obcwv")
 
 [node name="progress-bar" type="ProgressBar" parent="basic_ui"]
 layout_mode = 0
-offset_right = 924.0
-offset_bottom = 27.0
+offset_right = 320.0
+offset_bottom = 4.0
 show_percentage = false
 
 [node name="level-label" type="Label" parent="basic_ui"]
 layout_mode = 0
-offset_left = 36.0
-offset_top = 46.0
-offset_right = 86.0
-offset_bottom = 101.0
-text = "1"
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 25.0
+offset_bottom = 20.0
+text = "lvl 1"
 label_settings = SubResource("LabelSettings_wl5ax")
 script = ExtResource("2_ks8t7")
 
 [node name="ItemList" type="ItemList" parent="basic_ui"]
 visible = false
 layout_mode = 0
-offset_left = 324.0
-offset_top = 265.0
-offset_right = 661.0
-offset_bottom = 503.0
+offset_left = 82.0
+offset_top = 42.0
+offset_right = 245.0
+offset_bottom = 134.0
 theme = SubResource("Theme_obcwv")
-max_text_lines = 3
-max_columns = 3
+max_text_lines = 5
+max_columns = 2
 same_column_width = true
-fixed_column_width = 160
-icon_mode = 0
 script = ExtResource("3_wl5ax")
 
 [node name="pause_menu" type="Control" parent="."]
@@ -67,25 +65,27 @@ offset_bottom = 40.0
 
 [node name="dark_filter" type="ColorRect" parent="pause_menu"]
 layout_mode = 0
-offset_right = 924.0
-offset_bottom = 892.0
+offset_right = 320.0
+offset_bottom = 180.0
 color = Color(0, 0, 0, 0.35686275)
 
 [node name="resume_button" type="Button" parent="pause_menu"]
 layout_mode = 0
-offset_left = 403.0
-offset_top = 405.0
-offset_right = 511.0
-offset_bottom = 465.0
+offset_left = 139.0
+offset_top = 51.0
+offset_right = 189.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 9
 text = "RESUME
 "
 
 [node name="exit_button" type="Button" parent="pause_menu"]
 layout_mode = 0
-offset_left = 405.0
-offset_top = 489.0
-offset_right = 513.0
-offset_bottom = 549.0
+offset_left = 140.0
+offset_top = 92.0
+offset_right = 186.0
+offset_bottom = 113.0
+theme_override_font_sizes/font_size = 9
 text = "EXIT
 "
 
@@ -98,17 +98,17 @@ script = ExtResource("5_obcwv")
 
 [node name="dark_filter" type="ColorRect" parent="death screen"]
 layout_mode = 0
-offset_right = 924.0
-offset_bottom = 892.0
+offset_right = 320.0
+offset_bottom = 180.0
 color = Color(0, 0, 0, 0.35686275)
 
 [node name="death_word" type="TextureRect" parent="death screen"]
 custom_minimum_size = Vector2(70, 50)
 layout_mode = 0
-offset_left = 205.0
-offset_top = 155.0
-offset_right = 732.1724
-offset_bottom = 587.0
+offset_left = 88.0
+offset_top = 39.0
+offset_right = 201.48851
+offset_bottom = 132.0
 texture = ExtResource("6_obcwv")
 
 [connection signal="item_selected" from="basic_ui/ItemList" to="basic_ui/ItemList" method="_on_item_selected"]

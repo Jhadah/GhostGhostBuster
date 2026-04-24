@@ -9,10 +9,6 @@
 [ext_resource type="Resource" uid="uid://hpdto614k84b" path="res://player/weapons/shotgun/shotgun_weapon.tres" id="7_boad6"]
 [ext_resource type="Script" uid="uid://hnewb06sw4jy" path="res://player/hurtbox.gd" id="8_rgyib"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rgyib"]
-radius = 8.0
-height = 21.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
 atlas = ExtResource("4_qlg0r")
 region = Rect2(0, 0, 30, 30)
@@ -49,11 +45,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dqkch"]
-radius = 213.05867
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rgyib"]
+radius = 1.5
+height = 5.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgyib"]
+size = Vector2(133, 76)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hg6s5"]
-height = 25.0
+radius = 1.5
+height = 5.0
 
 [node name="player" type="CharacterBody2D"]
 z_index = 2
@@ -61,37 +62,36 @@ scale = Vector2(2, 2)
 collision_mask = 2
 script = ExtResource("1_onrkg")
 
-[node name="collision" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, -1.5)
-shape = SubResource("CapsuleShape2D_rgyib")
-
 [node name="animation" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+position = Vector2(0.18750004, 0.18750004)
+scale = Vector2(0.18750001, 0.18750001)
 sprite_frames = SubResource("SpriteFrames_2hs0m")
 animation = &"player-side"
 frame_progress = 0.43092597
 
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_rgyib")
+
 [node name="detection-range" type="Area2D" parent="."]
-visible = false
 z_index = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection-range"]
-position = Vector2(0, -0.5)
-shape = SubResource("CircleShape2D_dqkch")
+shape = SubResource("RectangleShape2D_rgyib")
 
 [node name="hurtbox" type="Area2D" parent="."]
 collision_mask = 2
 script = ExtResource("8_rgyib")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
-position = Vector2(-1.5, -1.5)
 shape = SubResource("CapsuleShape2D_hg6s5")
 
 [node name="shadow" type="Sprite2D" parent="."]
 z_index = 1
 texture_filter = 1
-position = Vector2(0, 9)
+position = Vector2(-2.9802322e-08, 2.5)
+scale = Vector2(0.14257813, 0.15354566)
 texture = ExtResource("2_g6k8r")
 
 [node name="weapon-manager" type="Node" parent="."]
