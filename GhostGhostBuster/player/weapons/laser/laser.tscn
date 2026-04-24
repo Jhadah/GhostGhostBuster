@@ -1,9 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://b73i1tppyeqtb"]
+[gd_scene load_steps=6 format=3 uid="uid://b73i1tppyeqtb"]
 
 [ext_resource type="Script" uid="uid://bqwqjhl6s5pdt" path="res://player/weapons/laser/laser.gd" id="1_1276f"]
+[ext_resource type="Texture2D" uid="uid://x18wj2to1mo1" path="res://player/weapons/laser/Senza nome.png" id="2_fc5c1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5no5p"]
-size = Vector2(924, 9)
+size = Vector2(320, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ih41l"]
+atlas = ExtResource("2_fc5c1")
+region = Rect2(0, 0, 16, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_03aqg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ih41l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="laser" type="Area2D"]
 z_index = 1
@@ -12,7 +28,7 @@ collision_mask = 2
 script = ExtResource("1_1276f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(462, 4.5)
+position = Vector2(160, 1)
 shape = SubResource("RectangleShape2D_5no5p")
 
 [node name="lingering-time" type="Timer" parent="."]
@@ -21,8 +37,9 @@ autostart = true
 
 [node name="beam" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(462.00003, 4.5)
-scale = Vector2(57.750004, 0.45000002)
+position = Vector2(160, 1)
+scale = Vector2(20, 0.09999979)
+sprite_frames = SubResource("SpriteFrames_03aqg")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="lingering-time" to="." method="_on_lingeringtime_timeout"]

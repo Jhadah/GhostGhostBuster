@@ -3,9 +3,10 @@ extends Node2D
 @export var enemy_scene:PackedScene
 var enemy_cap:int = 300
 
-var spawn_distance:int = 800
+var spawn_distance:int = 300
 @export var spawn_min:int = 1
 @export var spawn_max:int = 4
+var max_spawnable:int = 50
 
 var spawn_rates:Dictionary = {}
 @onready var default_enemy_stats = preload("res://enemies/default/default_enemy_stats.tres")
@@ -14,6 +15,8 @@ var spawn_rates:Dictionary = {}
 
 
 func _ready() -> void:	
+	Global.level_increased.connect(_on_level_increased)
+	
 	spawn_rates = {                     #spawn rates
 		default_enemy_stats: 0.65,
 		tough_enemy_stats: 0.2,
@@ -46,6 +49,10 @@ func get_random_enemy_stats():
 func _on_spawn_timer_timeout() -> void:
 	var amount_of_enemies = randi_range(spawn_min,spawn_max)
 	for i in range(amount_of_enemies):
-		if Global.Player.is_dead:
+		if Global.Player.is_dead or Global.n_enemies_alive > enemy_cap:
 			return
 		spawn_enemy()
+
+func _on_level_increased():
+	spawn_min += Global.level
+	spawn_max += Global.level

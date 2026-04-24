@@ -22,7 +22,7 @@ animations = [{
 [resource]
 script = ExtResource("1_8435d")
 weapon_scene = ExtResource("2_2xaxt")
-damage = 4.0
+damage = 2.5
 cooldown = 5.0
 cooldown_min = 1.0
 texture = SubResource("SpriteFrames_8rbmx")

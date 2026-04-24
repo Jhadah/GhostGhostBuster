@@ -42,6 +42,7 @@ animations = [{
 
 [resource]
 script = ExtResource("1_g7wpr")
+proj_speed = 150.0
 weapon_scene = ExtResource("2_typw8")
 damage = 1.0
 cooldown = 1.5

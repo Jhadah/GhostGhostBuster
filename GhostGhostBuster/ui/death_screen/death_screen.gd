@@ -9,6 +9,9 @@ var deathscreens:Array = [
 
 func _ready() -> void:
 	Global.player_died.connect(_on_player_died)
+	
+	$dark_filter.size
+	$death_word.size.x = Global.Viewport_Size.x * 0.5
 
 func _on_player_died():
 	visible = true
