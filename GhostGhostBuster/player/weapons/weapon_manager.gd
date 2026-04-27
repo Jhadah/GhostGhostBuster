@@ -54,4 +54,5 @@ func on_upgrade_acquired(upgrade:Dictionary, key_to_delete):
 			"unlock":
 				if !equipped_weapons.has(weapon):
 					equip_weapon(weapon)
+					Upgrades.add_to_pool(upgrade["upgrades_to_import"])					
 					Upgrades.delete_from_pool(key_to_delete) 
