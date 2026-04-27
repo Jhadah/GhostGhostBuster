@@ -4,7 +4,7 @@ func _ready() -> void:
 	Global.level_increased.connect(on_level_up)
 	$pause_menu/resume_button.pressed.connect(_on_resume_button_pressed)
 
-func on_level_up(level:int):
+func on_level_up(_level:int):
 	$basic_ui/ItemList.appear()
 
 func _input(event: InputEvent) -> void:
