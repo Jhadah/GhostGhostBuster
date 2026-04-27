@@ -68,7 +68,7 @@ position = Vector2(0.18750004, 0.18750004)
 scale = Vector2(0.18750001, 0.18750001)
 sprite_frames = SubResource("SpriteFrames_2hs0m")
 animation = &"player-side"
-frame_progress = 0.0046982067
+frame_progress = 0.81055194
 
 [node name="collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_rgyib")
