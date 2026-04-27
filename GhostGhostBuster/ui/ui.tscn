@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://d2i5gg68y2qm" path="res://ui/basic_ui.gd" id="2_obcwv"]
 [ext_resource type="Script" uid="uid://cbwieh7k4o5y1" path="res://ui/item_list.gd" id="3_wl5ax"]
 [ext_resource type="Script" uid="uid://djx3t4h2q4jr" path="res://ui/death_screen/death_screen.gd" id="5_obcwv"]
-[ext_resource type="Texture2D" uid="uid://8et6qydy3jps" path="res://ui/death_screen/death_screen1.png" id="6_obcwv"]
+[ext_resource type="Texture2D" uid="uid://c8ougdntmppq5" path="res://ui/death_screen/death_screen_chri.png" id="6_obcwv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wl5ax"]
 font_size = 9
@@ -105,10 +105,10 @@ color = Color(0, 0, 0, 0.35686275)
 [node name="death_word" type="TextureRect" parent="death screen"]
 custom_minimum_size = Vector2(70, 50)
 layout_mode = 0
-offset_left = 88.0
-offset_top = 39.0
-offset_right = 201.48851
-offset_bottom = 132.0
+offset_left = 99.0
+offset_top = 37.0
+offset_right = 212.48851
+offset_bottom = 149.0
 texture = ExtResource("6_obcwv")
 
 [connection signal="item_selected" from="basic_ui/ItemList" to="basic_ui/ItemList" method="_on_item_selected"]

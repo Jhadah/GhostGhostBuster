@@ -2,43 +2,43 @@
 
 [ext_resource type="Script" uid="uid://bb1witou4pb1e" path="res://player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://cloamtash80jf" path="res://world/shadow.png" id="2_g6k8r"]
+[ext_resource type="Texture2D" uid="uid://bt6ogcboq2ej" path="res://player/sprites/spritesheet-table-240-240(2).png" id="2_rgyib"]
 [ext_resource type="Script" uid="uid://cdh8sirt7nj4u" path="res://player/weapons/weapon_manager.gd" id="4_dqkch"]
-[ext_resource type="Texture2D" uid="uid://cw4tmmw28xnlf" path="res://player/sprites/player-side.png" id="4_qlg0r"]
 [ext_resource type="Resource" uid="uid://bcym02nbpaogg" path="res://player/weapons/default/default_weapon.tres" id="4_tuyoq"]
 [ext_resource type="Resource" uid="uid://nyk3pmlfc5rx" path="res://player/weapons/laser/laser_weapon.tres" id="5_qlg0r"]
 [ext_resource type="Resource" uid="uid://hpdto614k84b" path="res://player/weapons/shotgun/shotgun_weapon.tres" id="7_boad6"]
 [ext_resource type="Script" uid="uid://hnewb06sw4jy" path="res://player/hurtbox.gd" id="8_rgyib"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
-atlas = ExtResource("4_qlg0r")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hg6s5"]
+atlas = ExtResource("2_rgyib")
 region = Rect2(0, 0, 30, 30)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
-atlas = ExtResource("4_qlg0r")
+[sub_resource type="AtlasTexture" id="AtlasTexture_8t03j"]
+atlas = ExtResource("2_rgyib")
 region = Rect2(30, 0, 30, 30)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
-atlas = ExtResource("4_qlg0r")
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ieo8"]
+atlas = ExtResource("2_rgyib")
 region = Rect2(0, 30, 30, 30)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qfm1y"]
-atlas = ExtResource("4_qlg0r")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebec5"]
+atlas = ExtResource("2_rgyib")
 region = Rect2(30, 30, 30, 30)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2hs0m"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tuyoq")
+"texture": SubResource("AtlasTexture_hg6s5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d2wvv")
+"texture": SubResource("AtlasTexture_8t03j")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3v2ag")
+"texture": SubResource("AtlasTexture_2ieo8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qfm1y")
+"texture": SubResource("AtlasTexture_ebec5")
 }],
 "loop": true,
 "name": &"player-side",
@@ -68,7 +68,7 @@ position = Vector2(0.18750004, 0.18750004)
 scale = Vector2(0.18750001, 0.18750001)
 sprite_frames = SubResource("SpriteFrames_2hs0m")
 animation = &"player-side"
-frame_progress = 0.43092597
+frame_progress = 0.0046982067
 
 [node name="collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_rgyib")

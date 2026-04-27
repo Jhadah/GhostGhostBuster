@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4mxo5dkgaosw"
-path="res://.godot/imported/player-flame.png-9daf3b8ca9e218a3305228667be88f7d.ctex"
+uid="uid://bt6ogcboq2ej"
+path="res://.godot/imported/spritesheet-table-240-240(2).png-e22f733fbfedb9986be7dd89974c4358.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/sprites/player-flame.png"
-dest_files=["res://.godot/imported/player-flame.png-9daf3b8ca9e218a3305228667be88f7d.ctex"]
+source_file="res://player/sprites/spritesheet-table-240-240(2).png"
+dest_files=["res://.godot/imported/spritesheet-table-240-240(2).png-e22f733fbfedb9986be7dd89974c4358.ctex"]
 
 [params]
 

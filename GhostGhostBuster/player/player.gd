@@ -25,9 +25,9 @@ func _physics_process(_delta: float) -> void:
 
 func manage_sprite_orientation(dir):
 	if dir.x < 0:
-		is_facing_left = true
-	elif dir.x > 0:
 		is_facing_left = false
+	elif dir.x > 0:
+		is_facing_left = true
 	
 	$"animation".flip_h = !is_facing_left
 

@@ -1,17 +1,15 @@
 extends Control
 
 var deathscreens:Array = [
-	preload("res://ui/death_screen/death_screen1.png"),
-	preload("res://ui/death_screen/death_screen2.png"),
-	preload("res://ui/death_screen/death_screen3.png"),
-	preload("res://ui/death_screen/death_screen4.png")
+	preload("uid://8et6qydy3jps"),
+	preload("uid://cbnxup0xxwqhs"),
+	preload("uid://dhcap85m8onj8"),
+	preload("uid://djxwtta40mu2v"),
+	preload("uid://c8ougdntmppq5"),
 ]
 
 func _ready() -> void:
 	Global.player_died.connect(_on_player_died)
-	
-	$dark_filter.size
-	$death_word.size.x = Global.Viewport_Size.x * 0.5
 
 func _on_player_died():
 	visible = true
