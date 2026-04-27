@@ -10,10 +10,12 @@ func appear():
 	keys.shuffle()
 	
 	for i in range(2):
-		var upgrade = keys[i]
-		var item = add_item(upgrade, Upgrades.UsableUpgrades[upgrade]["icon"])
+		var key = keys[i]
+		var upgrade = Upgrades.UsableUpgrades[key]
+		var item = add_item(key, upgrade["icon"])
 		
-		set_item_metadata(item, Upgrades.UsableUpgrades[upgrade])
+		set_item_metadata(item, upgrade)
+		set_item_tooltip(item,upgrade["description"])
 
 func disappear():
 	visible = false

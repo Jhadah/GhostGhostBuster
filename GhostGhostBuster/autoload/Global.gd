@@ -1,7 +1,7 @@
 extends Node
 
 signal exp_gained
-signal level_increased
+signal level_increased(level:int)
 signal player_died
 
 var Viewport_Size:Vector2
@@ -24,7 +24,7 @@ func enemy_died():
 
 func level_up():
 	level += 1
-	level_increased.emit()
+	level_increased.emit(level)
 	current_exp = 0
 
 func gain_exp():
