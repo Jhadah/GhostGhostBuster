@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpyitus2qvfmd"]
+
+[ext_resource type="Script" uid="uid://b2eufv4q40lok" path="res://ui/start_menu/start_menu.gd" id="1_qaoya"]
+
+[node name="start_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qaoya")
+
+[node name="background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+color = Color(0, 0, 0, 1)
+
+[node name="play_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 62.0
+offset_right = 89.0
+offset_bottom = 93.0
+text = "start"
+
+[node name="exit_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 98.0
+offset_right = 90.0
+offset_bottom = 129.0
+text = "exit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 14.0
+offset_right = 219.0
+offset_bottom = 37.0
+theme_override_font_sizes/font_size = 20
+text = "GhostGhostBuster"
+
+[connection signal="pressed" from="play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="exit_button" to="." method="_on_exit_button_pressed"]

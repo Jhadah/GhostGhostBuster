@@ -1,9 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cys0el5hqfy7s"]
+[gd_scene load_steps=7 format=3 uid="uid://cys0el5hqfy7s"]
 
-[ext_resource type="Script" uid="uid://0idovq2m3e3w" path="res://ui/ui.gd" id="1_vkava"]
-[ext_resource type="Script" uid="uid://bo7n7scec8ylh" path="res://ui/level_label.gd" id="2_ks8t7"]
-[ext_resource type="Script" uid="uid://d2i5gg68y2qm" path="res://ui/basic_ui.gd" id="2_obcwv"]
-[ext_resource type="Script" uid="uid://cbwieh7k4o5y1" path="res://ui/item_list.gd" id="3_wl5ax"]
+[ext_resource type="Script" uid="uid://0idovq2m3e3w" path="res://ui/game/ui.gd" id="1_vkava"]
+[ext_resource type="Script" uid="uid://cbwieh7k4o5y1" path="res://ui/game/item_list.gd" id="3_wl5ax"]
 [ext_resource type="Script" uid="uid://djx3t4h2q4jr" path="res://ui/death_screen/death_screen.gd" id="5_obcwv"]
 [ext_resource type="Texture2D" uid="uid://c8ougdntmppq5" path="res://ui/death_screen/death_screen_chri.png" id="6_obcwv"]
 
@@ -13,7 +11,7 @@ font_size = 9
 [sub_resource type="Theme" id="Theme_obcwv"]
 default_font_size = 9
 
-[node name="UI" type="Control"]
+[node name="game_ui" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,15 +24,14 @@ script = ExtResource("1_vkava")
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("2_obcwv")
 
-[node name="progress-bar" type="ProgressBar" parent="basic_ui"]
+[node name="progress_bar" type="ProgressBar" parent="basic_ui"]
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 4.0
 show_percentage = false
 
-[node name="level-label" type="Label" parent="basic_ui"]
+[node name="level_label" type="Label" parent="basic_ui"]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 6.0
@@ -42,7 +39,6 @@ offset_right = 25.0
 offset_bottom = 20.0
 text = "lvl 1"
 label_settings = SubResource("LabelSettings_wl5ax")
-script = ExtResource("2_ks8t7")
 
 [node name="ItemList" type="ItemList" parent="basic_ui"]
 visible = false
@@ -71,9 +67,9 @@ color = Color(0, 0, 0, 0.35686275)
 
 [node name="resume_button" type="Button" parent="pause_menu"]
 layout_mode = 0
-offset_left = 139.0
+offset_left = 130.0
 offset_top = 51.0
-offset_right = 189.0
+offset_right = 198.0
 offset_bottom = 75.0
 theme_override_font_sizes/font_size = 9
 text = "RESUME
@@ -81,12 +77,22 @@ text = "RESUME
 
 [node name="exit_button" type="Button" parent="pause_menu"]
 layout_mode = 0
-offset_left = 140.0
+offset_left = 129.0
 offset_top = 92.0
-offset_right = 186.0
+offset_right = 197.0
 offset_bottom = 113.0
 theme_override_font_sizes/font_size = 9
 text = "EXIT
+"
+
+[node name="menu_button" type="Button" parent="pause_menu"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 128.0
+offset_right = 204.0
+offset_bottom = 149.0
+theme_override_font_sizes/font_size = 9
+text = "BACK TO MENU
 "
 
 [node name="death screen" type="Control" parent="."]
@@ -114,3 +120,4 @@ texture = ExtResource("6_obcwv")
 [connection signal="item_selected" from="basic_ui/ItemList" to="basic_ui/ItemList" method="_on_item_selected"]
 [connection signal="pressed" from="pause_menu/resume_button" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="pause_menu/exit_button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="pause_menu/menu_button" to="." method="_on_menu_button_pressed"]
