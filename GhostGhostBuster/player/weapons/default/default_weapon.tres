@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DefaultWeapon" load_steps=9 format=3 uid="uid://bcym02nbpaogg"]
+[gd_resource type="Resource" script_class="DefaultWeapon" format=3 uid="uid://bcym02nbpaogg"]
 
 [ext_resource type="Script" uid="uid://d1fi00diq2v4q" path="res://player/weapons/default/default_weapon.gd" id="1_g7wpr"]
 [ext_resource type="Texture2D" uid="uid://giwfw22mk24t" path="res://player/weapons/default/fireball shot.png" id="2_q87xj"]

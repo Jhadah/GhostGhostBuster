@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="LaserWeapon" load_steps=6 format=3 uid="uid://nyk3pmlfc5rx"]
+[gd_resource type="Resource" script_class="LaserWeapon" format=3 uid="uid://nyk3pmlfc5rx"]
 
 [ext_resource type="Script" uid="uid://ctowmhvlap0" path="res://player/weapons/laser/laser_weapon.gd" id="1_8435d"]
 [ext_resource type="PackedScene" uid="uid://b73i1tppyeqtb" path="res://player/weapons/laser/laser.tscn" id="2_2xaxt"]

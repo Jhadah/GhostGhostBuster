@@ -25,3 +25,6 @@ func shoot(dir:Vector2, shooter:Node2D):
 
 func perform_shoot(_dir:Vector2, _shooter:Node2D):
 	pass
+
+func activate_permanent_ability(_shooter:Node2D):
+	pass

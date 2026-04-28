@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://deaeudvle7r7r"]
+[gd_scene format=3 uid="uid://deaeudvle7r7r"]
 
 [ext_resource type="PackedScene" uid="uid://cys0el5hqfy7s" path="res://ui/ui.tscn" id="1_i1eo7"]
 [ext_resource type="PackedScene" uid="uid://dw1lts7yopg36" path="res://player/player.tscn" id="1_ig7tw"]
@@ -6,34 +6,35 @@
 [ext_resource type="Script" uid="uid://etwwd8trva0b" path="res://world/floor.gd" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://do18olciddjxu" path="res://world/spawn_manager.gd" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bg6tyqxdjyq8b" path="res://enemies/enemy.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://bepemudshy1t6" path="res://player/weapons/satellite/satellite.tscn" id="7_gu74f"]
 
-[node name="main" type="Node2D"]
+[node name="main" type="Node2D" unique_id=1666144970]
 
-[node name="player" parent="." instance=ExtResource("1_ig7tw")]
+[node name="player" parent="." unique_id=1104587386 instance=ExtResource("1_ig7tw")]
 position = Vector2(161, 90)
 speed = 50.0
 
-[node name="main_camera" type="Camera2D" parent="player"]
+[node name="main_camera" type="Camera2D" parent="player" unique_id=740095839]
 position = Vector2(-80.5, -45)
 anchor_mode = 0
 
-[node name="spawn_manager" type="Node2D" parent="."]
+[node name="spawn_manager" type="Node2D" parent="." unique_id=1193979065]
 script = ExtResource("4_tbgi4")
 enemy_scene = ExtResource("5_tbgi4")
 
-[node name="spawn_timer" type="Timer" parent="spawn_manager"]
+[node name="spawn_timer" type="Timer" parent="spawn_manager" unique_id=1105356519]
 wait_time = 3.0
 autostart = true
 
-[node name="UI-canvas-layer" type="CanvasLayer" parent="."]
+[node name="UI-canvas-layer" type="CanvasLayer" parent="." unique_id=877433569]
 process_mode = 3
 
-[node name="UI" parent="UI-canvas-layer" instance=ExtResource("1_i1eo7")]
+[node name="UI" parent="UI-canvas-layer" unique_id=1429296645 instance=ExtResource("1_i1eo7")]
 
-[node name="floor-canvas-layer" type="CanvasLayer" parent="."]
+[node name="floor-canvas-layer" type="CanvasLayer" parent="." unique_id=841854035]
 layer = -1
 
-[node name="floor" type="Sprite2D" parent="floor-canvas-layer"]
+[node name="floor" type="Sprite2D" parent="floor-canvas-layer" unique_id=287235770]
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(160, 90)
@@ -41,5 +42,8 @@ texture = ExtResource("1_tbgi4")
 region_enabled = true
 region_rect = Rect2(0, 0, 320, 180)
 script = ExtResource("4_jyhfs")
+
+[node name="satellite" parent="." unique_id=4494109 instance=ExtResource("7_gu74f")]
+position = Vector2(112, 83)
 
 [connection signal="timeout" from="spawn_manager/spawn_timer" to="spawn_manager" method="_on_spawn_timer_timeout"]

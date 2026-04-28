@@ -1,11 +1,13 @@
 extends Area2D
 
+var center:Node2D
+var rot = 0
+var rot_spd = 5
+var dist = 30
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	center = Global.Player
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	rot += rot_spd * delta
+	global_position = center.global_position +  Vector2.from_angle(rot).normalized() * dist
