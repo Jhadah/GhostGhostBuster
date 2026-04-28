@@ -1,10 +1,10 @@
 extends Control
 
 var deathscreens:Array = [
-	preload("uid://8et6qydy3jps"),
-	preload("uid://cbnxup0xxwqhs"),
-	preload("uid://dhcap85m8onj8"),
-	preload("uid://djxwtta40mu2v"),
+	#preload("uid://8et6qydy3jps"),
+	#preload("uid://cbnxup0xxwqhs"),
+	#preload("uid://dhcap85m8onj8"),
+	#preload("uid://djxwtta40mu2v"),
 	preload("uid://c8ougdntmppq5"),
 ]
 
