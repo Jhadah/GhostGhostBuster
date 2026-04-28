@@ -10,7 +10,10 @@ extends Node
 var equipped_weapons:Array[Weapon] = []
 var is_targeting:bool = false
 
+var unlock_weapon_lvl_threshold:int = 3
+
 func _ready() -> void:
+	Global.level_increased.connect(_on_level_increased)
 	Upgrades.upgrade_acquired.connect(on_upgrade_acquired)
 	equip_weapon(default_weapon)
 
@@ -54,4 +57,9 @@ func on_upgrade_acquired(upgrade:Dictionary, key_to_delete):
 			"unlock":
 				if !equipped_weapons.has(weapon):
 					equip_weapon(weapon)
+					Upgrades.add_to_pool(upgrade["upgrades_to_import"])
 					Upgrades.delete_from_pool(key_to_delete) 
+
+func _on_level_increased(level:int):
+	if level >= unlock_weapon_lvl_threshold:
+		Upgrades.add_to_pool(Upgrades.new_weapons_unlock)

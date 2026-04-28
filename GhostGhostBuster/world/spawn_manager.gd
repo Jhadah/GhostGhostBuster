@@ -53,6 +53,6 @@ func _on_spawn_timer_timeout() -> void:
 			return
 		spawn_enemy()
 
-func _on_level_increased():
-	spawn_min += Global.level
-	spawn_max += Global.level
+func _on_level_increased(level:int):
+	spawn_min += level
+	spawn_max += level
