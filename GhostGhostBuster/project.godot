@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="magic-survival-clone"
-run/main_scene="uid://deaeudvle7r7r"
+run/main_scene="uid://dpyitus2qvfmd"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
 [autoload]
