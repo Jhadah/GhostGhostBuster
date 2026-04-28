@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cys0el5hqfy7s"]
+[gd_scene load_steps=9 format=3 uid="uid://cys0el5hqfy7s"]
 
 [ext_resource type="Script" uid="uid://0idovq2m3e3w" path="res://ui/ui.gd" id="1_vkava"]
 [ext_resource type="Script" uid="uid://bo7n7scec8ylh" path="res://ui/game/level_label.gd" id="2_ks8t7"]
 [ext_resource type="Script" uid="uid://d2i5gg68y2qm" path="res://ui/game/game_ui.gd" id="2_obcwv"]
 [ext_resource type="Script" uid="uid://cbwieh7k4o5y1" path="res://ui/game/item_list.gd" id="3_wl5ax"]
-[ext_resource type="Script" uid="uid://co4kscnvmcc8i" path="res://ui/pause_menu.gd" id="5_bo1jx"]
 [ext_resource type="Script" uid="uid://djx3t4h2q4jr" path="res://ui/death_screen/death_screen.gd" id="5_obcwv"]
 [ext_resource type="Texture2D" uid="uid://c8ougdntmppq5" path="res://ui/death_screen/death_screen_chri.png" id="6_obcwv"]
 
@@ -63,7 +62,6 @@ visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("5_bo1jx")
 
 [node name="dark_filter" type="ColorRect" parent="pause_menu"]
 layout_mode = 0

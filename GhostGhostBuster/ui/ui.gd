@@ -17,6 +17,7 @@ func _on_resume_button_pressed():
 	$pause_menu.visible = false
 
 func _on_exit_button_pressed() -> void:
+	get_tree().paused = false
 	get_tree().quit()
 
 func _on_menu_button_pressed() -> void:
