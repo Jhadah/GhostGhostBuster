@@ -15,3 +15,6 @@ func _on_player_died():
 	visible = true
 	var random = randi_range(0, deathscreens.size() - 1)
 	$death_word.texture = deathscreens[random]
+
+func _on_play_again_button_pressed() -> void:
+	get_tree().reload_current_scene()

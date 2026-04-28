@@ -14,10 +14,13 @@ func _ready() -> void:
 	Global.Player = self
 	$"animation".play("player-side")
 
-func _input(_event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	var dir = Input.get_vector("left","right","up","down")
 	velocity = dir * speed
 	manage_sprite_orientation(dir)
+	
+	if event.is_action_pressed("die"):
+		die()
 
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
@@ -57,10 +60,11 @@ func _on_hurtbox_body_entered(body: Node2D) -> void:
 func take_damage():
 	hp -= 1
 	if hp <= 0:
-		Global.player_died.emit()
 		die()
 
 func die():
+	Global.player_died.emit()
+	
 	is_dead = true
 	visible = false
 	set_physics_process(false)
