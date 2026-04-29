@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyStats" format=3 uid="uid://qlc63x24i7jn"]
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=6 format=3 uid="uid://qlc63x24i7jn"]
 
 [ext_resource type="Script" uid="uid://0xmaitvn4dil" path="res://enemies/enemy-stats.gd" id="1_srwjb"]
 [ext_resource type="Texture2D" uid="uid://ewc0eweossba" path="res://enemies/speed/speed_enemy.png" id="2_443br"]
@@ -28,6 +28,6 @@ animations = [{
 [resource]
 script = ExtResource("1_srwjb")
 hp = 1.0
-speed = 40
+speed = 25
 texture = SubResource("SpriteFrames_cqlm0")
 metadata/_custom_type_script = "uid://0xmaitvn4dil"

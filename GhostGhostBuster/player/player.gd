@@ -21,6 +21,8 @@ func _input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("die"):
 		die()
+	if event.is_action_pressed("levelup"):
+		Global.level_up()
 
 func _physics_process(_delta: float) -> void:
 	move_and_slide()

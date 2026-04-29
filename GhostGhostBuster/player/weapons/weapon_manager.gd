@@ -6,6 +6,7 @@ extends Node
 @export var default_weapon:Weapon
 @export var laser_weapon:Weapon
 @export var shotgun_weapon:Weapon
+@export var satellite_weapon:Weapon
 
 var equipped_weapons:Array[Weapon] = []
 var is_targeting:bool = false
@@ -13,8 +14,8 @@ var is_targeting:bool = false
 var unlock_weapon_lvl_threshold:int = 3
 
 func _ready() -> void:
-	Global.level_increased.connect(_on_level_increased)
 	Upgrades.upgrade_acquired.connect(on_upgrade_acquired)
+	Upgrades.add_to_pool(Upgrades.new_weapons_unlock)
 	equip_weapon(default_weapon)
 
 func _process(delta: float) -> void:
@@ -50,7 +51,7 @@ func on_upgrade_acquired(upgrade:Dictionary, key_to_delete):
 				weapon.cooldown = max(weapon.cooldown_min, weapon.cooldown / (1 + (upgrade["amount"]/100)))
 			"speed": #default weapon, shotgun weapon
 				weapon.proj_speed += upgrade["amount"]
-			"count": #default weapon
+			"count": #default weapon, laser
 				weapon.count += upgrade["amount"]
 			"pellet_number": #shotgun weapon
 				weapon.pellet_number += upgrade["amount"]
@@ -59,7 +60,5 @@ func on_upgrade_acquired(upgrade:Dictionary, key_to_delete):
 					equip_weapon(weapon)
 					Upgrades.add_to_pool(upgrade["upgrades_to_import"])
 					Upgrades.delete_from_pool(key_to_delete) 
-
-func _on_level_increased(level:int):
-	if level >= unlock_weapon_lvl_threshold:
-		Upgrades.add_to_pool(Upgrades.new_weapons_unlock)
+		if weapon == satellite_weapon:
+			weapon.activate_permanent_ability(player)

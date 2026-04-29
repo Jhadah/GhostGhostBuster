@@ -3,10 +3,12 @@ extends Node2D
 @export var enemy_scene:PackedScene
 var enemy_cap:int = 300
 
-var spawn_distance:int = 300
+var timer_wait_time:float = 3.0
+
 @export var spawn_min:int = 1
 @export var spawn_max:int = 4
-var max_spawnable:int = 50
+var spawn_distance:int = 240
+var max_spawnable:int = 40
 
 var spawn_rates:Dictionary = {}
 @onready var default_enemy_stats = preload("res://enemies/default/default_enemy_stats.tres")
@@ -18,10 +20,12 @@ func _ready() -> void:
 	Global.level_increased.connect(_on_level_increased)
 	
 	spawn_rates = {                     #spawn rates
-		default_enemy_stats: 0.65,
+		default_enemy_stats: 0.75,
 		tough_enemy_stats: 0.2,
-		speed_enemy_stats: 0.15,
+		speed_enemy_stats: 0.05,
 	}
+	$spawn_timer.start()
+	$spawn_timer.wait_time = timer_wait_time
 
 func spawn_enemy():
 	if Global.n_enemies_alive > enemy_cap:

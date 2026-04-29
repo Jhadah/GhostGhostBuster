@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SatelliteWeapon" load_steps=3 format=3 uid="uid://dt1y3pd757r1b"]
+
+[ext_resource type="Script" uid="uid://by02r1vlmef6i" path="res://player/weapons/satellite/satellite_weapon.gd" id="1_2wqo4"]
+[ext_resource type="PackedScene" uid="uid://bepemudshy1t6" path="res://player/weapons/satellite/satellite.tscn" id="2_comkj"]
+
+[resource]
+script = ExtResource("1_2wqo4")
+dist_from_center = 60.0
+rotation_speed = 1.5
+satellite_size = 1.0
+count = 1
+weapon_scene = ExtResource("2_comkj")
+metadata/_custom_type_script = "uid://by02r1vlmef6i"

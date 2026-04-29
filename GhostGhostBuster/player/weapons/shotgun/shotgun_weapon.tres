@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ShotgunWeapon" format=3 uid="uid://hpdto614k84b"]
+[gd_resource type="Resource" script_class="ShotgunWeapon" load_steps=6 format=3 uid="uid://hpdto614k84b"]
 
 [ext_resource type="Script" uid="uid://cg8b2xasda7ib" path="res://player/weapons/shotgun/shotgun_weapon.gd" id="1_aelwa"]
 [ext_resource type="PackedScene" uid="uid://swq3jmyxgln0" path="res://player/weapons/default/bullet.tscn" id="2_ep3ye"]
