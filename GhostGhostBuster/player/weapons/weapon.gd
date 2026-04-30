@@ -6,7 +6,7 @@ extends Resource
 @export var damage:float
 @export var cooldown:float
 @export var cooldown_min = 0.5
-@export var texture = SpriteFrames
+@export var texture:SpriteFrames
 
 var cooldown_timer = 0
 
@@ -24,4 +24,7 @@ func shoot(dir:Vector2, shooter:Node2D):
 	perform_shoot(dir, shooter)
 
 func perform_shoot(_dir:Vector2, _shooter:Node2D):
+	pass
+
+func activate_permanent_ability(_shooter:Node2D):
 	pass

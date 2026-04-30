@@ -42,6 +42,6 @@ animations = [{
 [resource]
 script = ExtResource("1_46rjd")
 hp = 2.5
-speed = 20
+speed = 10
 texture = SubResource("SpriteFrames_jlnfu")
 metadata/_custom_type_script = "uid://0xmaitvn4dil"

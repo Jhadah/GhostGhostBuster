@@ -22,7 +22,6 @@ script = ExtResource("4_tbgi4")
 enemy_scene = ExtResource("5_tbgi4")
 
 [node name="spawn_timer" type="Timer" parent="spawn_manager"]
-wait_time = 3.0
 autostart = true
 
 [node name="UI-canvas-layer" type="CanvasLayer" parent="."]

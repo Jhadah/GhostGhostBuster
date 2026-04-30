@@ -3,6 +3,7 @@ extends Node
 signal upgrade_acquired(upgrade:Dictionary, key_to_delete:String)
 
 var UsableUpgrades:Dictionary = {}
+
 var shotgun_upgrades:Dictionary = {
 	"MORE PELLETS": {
 		"weapon": "shotgun_weapon",
@@ -14,6 +15,7 @@ var shotgun_upgrades:Dictionary = {
 	"MORE SHOTGUN SPEED": {
 		"weapon": "shotgun_weapon",
 		"stat_to_upgrade": "cooldown",
+		"amount": 10,
 		"icon": preload("res://ui/upgrade_icons/default_more_damage.png"),
 		"description": "Decrease the downtime between shotgun shots"
 	}
@@ -27,19 +29,44 @@ var laser_upgrades:Dictionary = {
 		"description": "Shoot another laser in a different direction"
 	}
 }
+var satellite_upgrades:Dictionary = {
+	"MORE SATELLITES": {
+		"weapon": "satellite_weapon",
+		"stat_to_upgrade": "count",
+		"amount": 1,
+		"icon": preload("res://ui/upgrade_icons/default_more_damage.png"),
+		"description": "add 1 more satellite"
+	},
+	"FASTER SATELLITES": {
+		"weapon": "satellite_weapon",
+		"stat_to_upgrade": "rot_spd",
+		"amount": 0.2,
+		"icon": preload("res://ui/upgrade_icons/default_more_damage.png"),
+		"description": "Satellites move faster"
+	}
+}
+
 var new_weapons_unlock:Dictionary = {
 	"UNLOCK LASER": {
 			"weapon": "laser_weapon",
 			"stat_to_upgrade": "unlock",
+			"upgrades_to_import": laser_upgrades,
 			"icon": preload("res://ui/upgrade_icons/default_more_damage.png"),
 			"description": "A beam of energy that pierces enemies"
-		},
+	},
 	"UNLOCK SHOTGUN": {
 		"weapon": "shotgun_weapon",
 		"stat_to_upgrade": "unlock",
 		"upgrades_to_import": shotgun_upgrades,
 		"icon": preload("res://ui/upgrade_icons/default_more_damage.png"),
 		"description": "you know what a shotgun is..."
+	},
+	"UNLOCK SATELLITE": {
+		"weapon": "satellite_weapon",
+		"stat_to_upgrade": "unlock",
+		"upgrades_to_import": satellite_upgrades,
+		"icon": preload("res://ui/upgrade_icons/default_more_damage.png"),
+		"description": "A ball of energy that rotates around the you and deals damage"
 	}
 }
 

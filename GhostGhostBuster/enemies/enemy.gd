@@ -26,7 +26,7 @@ func take_damage(amount:float):
 		queue_free()
 
 func manage_facing_direction():
-	if dir > Vector2(0,0):
+	if dir.x > 0:
 		$animation.flip_h = true
 	else:
 		$animation.flip_h = false
