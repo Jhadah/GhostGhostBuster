@@ -60,5 +60,7 @@ func on_upgrade_acquired(upgrade:Dictionary, key_to_delete):
 					equip_weapon(weapon)
 					Upgrades.add_to_pool(upgrade["upgrades_to_import"])
 					Upgrades.delete_from_pool(key_to_delete) 
+		
 		if weapon == satellite_weapon:
+			Global.permanent_ability_upgraded.emit()
 			weapon.activate_permanent_ability(player)

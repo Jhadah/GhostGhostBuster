@@ -3,6 +3,7 @@ extends Node
 signal exp_gained
 signal level_increased(level:int)
 signal player_died
+signal permanent_ability_upgraded
 
 var Viewport_Size:Vector2
 var Player:CharacterBody2D    #viene assegnato nel nodo player
