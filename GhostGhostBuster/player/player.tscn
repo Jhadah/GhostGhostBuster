@@ -7,7 +7,6 @@
 [ext_resource type="Resource" uid="uid://bcym02nbpaogg" path="res://player/weapons/default/default_weapon.tres" id="4_tuyoq"]
 [ext_resource type="Resource" uid="uid://nyk3pmlfc5rx" path="res://player/weapons/laser/laser_weapon.tres" id="5_qlg0r"]
 [ext_resource type="Resource" uid="uid://hpdto614k84b" path="res://player/weapons/shotgun/shotgun_weapon.tres" id="7_boad6"]
-[ext_resource type="Script" uid="uid://hnewb06sw4jy" path="res://player/hurtbox.gd" id="8_rgyib"]
 [ext_resource type="Resource" uid="uid://dt1y3pd757r1b" path="res://player/weapons/satellite/satellite_weapon.tres" id="9_hg6s5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hg6s5"]
@@ -49,6 +48,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rgyib"]
 size = Vector2(133, 76)
 
+[sub_resource type="GDScript" id="GDScript_rgyib"]
+script/source = "extends Area2D
+"
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hg6s5"]
 radius = 1.5
 height = 5.0
@@ -76,9 +79,10 @@ shape = SubResource("RectangleShape2D_rgyib")
 
 [node name="hurtbox" type="Area2D" parent="."]
 collision_mask = 2
-script = ExtResource("8_rgyib")
+script = SubResource("GDScript_rgyib")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(0.5, 0)
 shape = SubResource("CapsuleShape2D_hg6s5")
 
 [node name="shadow" type="Sprite2D" parent="."]
@@ -94,6 +98,8 @@ default_weapon = ExtResource("4_tuyoq")
 laser_weapon = ExtResource("5_qlg0r")
 shotgun_weapon = ExtResource("7_boad6")
 satellite_weapon = ExtResource("9_hg6s5")
+
+[node name="collision" type="CollisionShape2D" parent="."]
 
 [connection signal="body_entered" from="detection-range" to="." method="_on_detection_range_body_entered"]
 [connection signal="body_exited" from="detection-range" to="." method="_on_detection_range_body_exited"]

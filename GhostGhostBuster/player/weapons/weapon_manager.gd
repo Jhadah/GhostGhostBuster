@@ -11,8 +11,6 @@ extends Node
 var equipped_weapons:Array[Weapon] = []
 var is_targeting:bool = false
 
-var unlock_weapon_lvl_threshold:int = 3
-
 func _ready() -> void:
 	Upgrades.upgrade_acquired.connect(on_upgrade_acquired)
 	Upgrades.add_to_pool(Upgrades.new_weapons_unlock)
@@ -55,6 +53,8 @@ func on_upgrade_acquired(upgrade:Dictionary, key_to_delete):
 				weapon.count += upgrade["amount"]
 			"pellet_number": #shotgun weapon
 				weapon.pellet_number += upgrade["amount"]
+			"rot_spd": #satellite weapon
+				weapon.rot.spd += upgrade["amount"]
 			"unlock":
 				if !equipped_weapons.has(weapon):
 					equip_weapon(weapon)

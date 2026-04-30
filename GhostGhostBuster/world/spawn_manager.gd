@@ -58,5 +58,6 @@ func _on_spawn_timer_timeout() -> void:
 		spawn_enemy()
 
 func _on_level_increased(level:int):
-	spawn_min += level
-	spawn_max += level
+	if spawn_max < max_spawnable:
+		spawn_min += level
+		spawn_max += level

@@ -15,6 +15,7 @@ var shotgun_upgrades:Dictionary = {
 	"MORE SHOTGUN SPEED": {
 		"weapon": "shotgun_weapon",
 		"stat_to_upgrade": "cooldown",
+		"amount": 10,
 		"icon": preload("res://ui/upgrade_icons/default_more_damage.png"),
 		"description": "Decrease the downtime between shotgun shots"
 	}
@@ -35,6 +36,13 @@ var satellite_upgrades:Dictionary = {
 		"amount": 1,
 		"icon": preload("res://ui/upgrade_icons/default_more_damage.png"),
 		"description": "add 1 more satellite"
+	},
+	"FASTER SATELLITES": {
+		"weapon": "satellite_weapon",
+		"stat_to_upgrade": "rot_spd",
+		"amount": 0.2,
+		"icon": preload("res://ui/upgrade_icons/default_more_damage.png"),
+		"description": "Satellites move faster"
 	}
 }
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x18wj2to1mo1"
-path="res://.godot/imported/Senza nome.png-723685a2a1ec0c23676f8be42792ee07.ctex"
+uid="uid://xboi8chtlhy8"
+path="res://.godot/imported/satellite_sprite.png-76a3c8d1c1bbdb41a4a5a190fdf3a042.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/weapons/laser/Senza nome.png"
-dest_files=["res://.godot/imported/Senza nome.png-723685a2a1ec0c23676f8be42792ee07.ctex"]
+source_file="res://player/weapons/satellite/satellite_sprite.png"
+dest_files=["res://.godot/imported/satellite_sprite.png-76a3c8d1c1bbdb41a4a5a190fdf3a042.ctex"]
 
 [params]
 

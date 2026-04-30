@@ -12,7 +12,9 @@ var n_enemies_alive:int = 0
 var level:int = 1
 
 var current_exp:int = 0
-var max_exp:float = 100
+var exp_gain:int = 10
+var max_exp:float = 40
+var max_xp_growth:int = 20
 
 func _ready() -> void:
 	Viewport_Size = get_tree().root.get_visible_rect().size
@@ -25,11 +27,12 @@ func enemy_died():
 
 func level_up():
 	level += 1
-	level_increased.emit(level)
 	current_exp = 0
+	level_increased.emit(level)
+	max_exp += max_xp_growth
 
 func gain_exp():
-	current_exp += max((max_exp / level) / 4, max_exp * 0.05)
+	current_exp += exp_gain
 	exp_gained.emit()
 	
 	if current_exp >= max_exp:

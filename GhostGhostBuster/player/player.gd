@@ -8,6 +8,7 @@ var is_dead:bool = false
 
 #--attack system--# 
 var enemies_in_range:Array[CharacterBody2D] = []
+var detectable_enemies:int = 10
 @onready var weapon_manager:Node = $"weapon-manager"
 
 func _ready() -> void:
@@ -47,13 +48,17 @@ func _on_detection_range_body_exited(body: Node2D) -> void:
 func get_nearest_enemy_direction():
 	var nearest_enemy: Node2D = null
 	var min_dist:float = INF
-	for enemy in enemies_in_range:
+	
+	var detection_limit:int = min(enemies_in_range.size(), detectable_enemies)
+	for i in range(detection_limit):
+		var enemy = enemies_in_range[i]
 		var enemy_dist = enemy.global_position.distance_to(global_position)
 		if enemy_dist < min_dist:
 			nearest_enemy = enemy
 			min_dist = enemy_dist
+	
 	weapon_manager.update_target(nearest_enemy)
-#endregion --shooting system--#
+#endregion
 
 func _on_hurtbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):

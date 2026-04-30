@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b73i1tppyeqtb"]
 
 [ext_resource type="Script" uid="uid://bqwqjhl6s5pdt" path="res://player/weapons/laser/laser.gd" id="1_1276f"]
-[ext_resource type="Texture2D" uid="uid://x18wj2to1mo1" path="res://player/weapons/laser/Senza nome.png" id="2_fc5c1"]
+[ext_resource type="Texture2D" uid="uid://x18wj2to1mo1" path="res://player/weapons/laser/laser_sprite.png" id="2_fc5c1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5no5p"]
 size = Vector2(320, 2)

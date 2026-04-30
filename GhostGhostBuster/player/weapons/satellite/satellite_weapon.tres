@@ -1,7 +1,23 @@
-[gd_resource type="Resource" script_class="SatelliteWeapon" load_steps=3 format=3 uid="uid://dt1y3pd757r1b"]
+[gd_resource type="Resource" script_class="SatelliteWeapon" load_steps=6 format=3 uid="uid://dt1y3pd757r1b"]
 
 [ext_resource type="Script" uid="uid://by02r1vlmef6i" path="res://player/weapons/satellite/satellite_weapon.gd" id="1_2wqo4"]
+[ext_resource type="Texture2D" uid="uid://xboi8chtlhy8" path="res://player/weapons/satellite/satellite_sprite.png" id="2_5fy0u"]
 [ext_resource type="PackedScene" uid="uid://bepemudshy1t6" path="res://player/weapons/satellite/satellite.tscn" id="2_comkj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kdhs"]
+atlas = ExtResource("2_5fy0u")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_comkj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8kdhs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [resource]
 script = ExtResource("1_2wqo4")
@@ -10,4 +26,6 @@ rotation_speed = 1.5
 satellite_size = 1.0
 count = 1
 weapon_scene = ExtResource("2_comkj")
+damage = 2.0
+texture = SubResource("SpriteFrames_comkj")
 metadata/_custom_type_script = "uid://by02r1vlmef6i"

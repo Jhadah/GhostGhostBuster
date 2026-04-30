@@ -6,7 +6,7 @@ extends Resource
 @export var damage:float
 @export var cooldown:float
 @export var cooldown_min = 0.5
-@export var texture = SpriteFrames
+@export var texture:SpriteFrames
 
 var cooldown_timer = 0
 

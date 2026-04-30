@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ctowmhvlap0" path="res://player/weapons/laser/laser_weapon.gd" id="1_8435d"]
 [ext_resource type="PackedScene" uid="uid://b73i1tppyeqtb" path="res://player/weapons/laser/laser.tscn" id="2_2xaxt"]
-[ext_resource type="Texture2D" uid="uid://x18wj2to1mo1" path="res://player/weapons/laser/Senza nome.png" id="2_qubqu"]
+[ext_resource type="Texture2D" uid="uid://x18wj2to1mo1" path="res://player/weapons/laser/laser_sprite.png" id="2_qubqu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6e7ye"]
 atlas = ExtResource("2_qubqu")

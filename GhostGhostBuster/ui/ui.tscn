@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cys0el5hqfy7s"]
+[gd_scene load_steps=9 format=3 uid="uid://cys0el5hqfy7s"]
 
 [ext_resource type="Script" uid="uid://0idovq2m3e3w" path="res://ui/ui.gd" id="1_vkava"]
 [ext_resource type="Script" uid="uid://bo7n7scec8ylh" path="res://ui/game/level_label.gd" id="2_ks8t7"]
@@ -13,7 +13,8 @@ font_size = 9
 [sub_resource type="Theme" id="Theme_obcwv"]
 default_font_size = 9
 
-[node name="UI" type="Control" unique_id=701781337]
+[node name="UI" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,19 +23,20 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vkava")
 
-[node name="game_ui" type="Control" parent="." unique_id=1059202358]
+[node name="game_ui" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_obcwv")
 
-[node name="progress-bar" type="ProgressBar" parent="game_ui" unique_id=1522440287]
+[node name="progress-bar" type="ProgressBar" parent="game_ui"]
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 4.0
+max_value = 0.0
 show_percentage = false
 
-[node name="level-label" type="Label" parent="game_ui" unique_id=1820462933]
+[node name="level-label" type="Label" parent="game_ui"]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 6.0
@@ -44,7 +46,7 @@ text = "lvl 1"
 label_settings = SubResource("LabelSettings_wl5ax")
 script = ExtResource("2_ks8t7")
 
-[node name="ItemList" type="ItemList" parent="game_ui" unique_id=1831342992]
+[node name="ItemList" type="ItemList" parent="game_ui"]
 visible = false
 layout_mode = 0
 offset_left = 82.0
@@ -57,19 +59,19 @@ max_columns = 2
 same_column_width = true
 script = ExtResource("3_wl5ax")
 
-[node name="pause_menu" type="Control" parent="." unique_id=259566686]
+[node name="pause_menu" type="Control" parent="."]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="dark_filter" type="ColorRect" parent="pause_menu" unique_id=1215997005]
+[node name="dark_filter" type="ColorRect" parent="pause_menu"]
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 180.0
 color = Color(0, 0, 0, 0.35686275)
 
-[node name="resume_button" type="Button" parent="pause_menu" unique_id=1976696114]
+[node name="resume_button" type="Button" parent="pause_menu"]
 layout_mode = 0
 offset_left = 139.0
 offset_top = 51.0
@@ -79,7 +81,7 @@ theme_override_font_sizes/font_size = 9
 text = "RESUME
 "
 
-[node name="exit_button" type="Button" parent="pause_menu" unique_id=349440578]
+[node name="exit_button" type="Button" parent="pause_menu"]
 layout_mode = 0
 offset_left = 140.0
 offset_top = 92.0
@@ -89,7 +91,7 @@ theme_override_font_sizes/font_size = 9
 text = "EXIT
 "
 
-[node name="menu_button" type="Button" parent="pause_menu" unique_id=364670745]
+[node name="menu_button" type="Button" parent="pause_menu"]
 layout_mode = 0
 offset_left = 126.0
 offset_top = 125.0
@@ -98,20 +100,20 @@ offset_bottom = 150.0
 theme_override_font_sizes/font_size = 9
 text = "BACK TO MENU"
 
-[node name="death screen" type="Control" parent="." unique_id=1311162598]
+[node name="death screen" type="Control" parent="."]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("5_obcwv")
 
-[node name="dark_filter" type="ColorRect" parent="death screen" unique_id=1133875213]
+[node name="dark_filter" type="ColorRect" parent="death screen"]
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 180.0
 color = Color(0, 0, 0, 0.35686275)
 
-[node name="death_word" type="TextureRect" parent="death screen" unique_id=318585261]
+[node name="death_word" type="TextureRect" parent="death screen"]
 custom_minimum_size = Vector2(70, 50)
 layout_mode = 0
 offset_left = 69.0
@@ -122,7 +124,7 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("6_obcwv")
 stretch_mode = 3
 
-[node name="play_again_button" type="Button" parent="death screen" unique_id=488906663]
+[node name="play_again_button" type="Button" parent="death screen"]
 layout_mode = 0
 offset_left = 116.0
 offset_top = 149.0
