@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dw1lts7yopg36"]
+[gd_scene load_steps=18 format=3 uid="uid://dw1lts7yopg36"]
 
 [ext_resource type="Script" uid="uid://bb1witou4pb1e" path="res://player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://cloamtash80jf" path="res://world/shadow.png" id="2_g6k8r"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://bcym02nbpaogg" path="res://player/weapons/default/default_weapon.tres" id="4_tuyoq"]
 [ext_resource type="Resource" uid="uid://nyk3pmlfc5rx" path="res://player/weapons/laser/laser_weapon.tres" id="5_qlg0r"]
 [ext_resource type="Resource" uid="uid://hpdto614k84b" path="res://player/weapons/shotgun/shotgun_weapon.tres" id="7_boad6"]
+[ext_resource type="Resource" uid="uid://biy78ejem6aeh" path="res://player/weapons/pulsar/pulsar_weapon.tres" id="9_8t03j"]
 [ext_resource type="Resource" uid="uid://dt1y3pd757r1b" path="res://player/weapons/satellite/satellite_weapon.tres" id="9_hg6s5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hg6s5"]
@@ -98,8 +99,7 @@ default_weapon = ExtResource("4_tuyoq")
 laser_weapon = ExtResource("5_qlg0r")
 shotgun_weapon = ExtResource("7_boad6")
 satellite_weapon = ExtResource("9_hg6s5")
-
-[node name="collision" type="CollisionShape2D" parent="."]
+pulsar_weapon = ExtResource("9_8t03j")
 
 [connection signal="body_entered" from="detection-range" to="." method="_on_detection_range_body_entered"]
 [connection signal="body_exited" from="detection-range" to="." method="_on_detection_range_body_exited"]

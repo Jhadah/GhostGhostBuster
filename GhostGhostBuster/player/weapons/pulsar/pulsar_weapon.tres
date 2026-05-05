@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="PulsarWeapon" load_steps=6 format=3 uid="uid://biy78ejem6aeh"]
+
+[ext_resource type="Script" uid="uid://752lypha83ar" path="res://player/weapons/pulsar/pulsar_weapon.gd" id="1_gd0rl"]
+[ext_resource type="Texture2D" uid="uid://bt6ogcboq2ej" path="res://player/sprites/spritesheet-table-240-240(2).png" id="2_epsgl"]
+[ext_resource type="PackedScene" uid="uid://fdxia46u3x3r" path="res://player/weapons/pulsar/pulsar.tscn" id="3_lxggb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2ik0"]
+atlas = ExtResource("2_epsgl")
+region = Rect2(10, 10, 10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ym2g3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2ik0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_gd0rl")
+weapon_scene = ExtResource("3_lxggb")
+cooldown = 4.0
+texture = SubResource("SpriteFrames_ym2g3")
+metadata/_custom_type_script = "uid://752lypha83ar"

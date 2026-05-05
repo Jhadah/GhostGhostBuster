@@ -7,6 +7,7 @@ extends Node
 @export var laser_weapon:Weapon
 @export var shotgun_weapon:Weapon
 @export var satellite_weapon:Weapon
+@export var pulsar_weapon:Weapon
 
 var equipped_weapons:Array[Weapon] = []
 var is_targeting:bool = false
@@ -14,7 +15,7 @@ var is_targeting:bool = false
 func _ready() -> void:
 	Upgrades.upgrade_acquired.connect(on_upgrade_acquired)
 	Upgrades.add_to_pool(Upgrades.new_weapons_unlock)
-	equip_weapon(default_weapon)
+	equip_weapon(pulsar_weapon)
 
 func _process(delta: float) -> void:
 	for weapon in equipped_weapons:

@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://fdxia46u3x3r"]
+
+[ext_resource type="Script" uid="uid://dkhgl7aoag0yi" path="res://player/weapons/pulsar/pulsar.gd" id="1_4chc6"]
+[ext_resource type="Texture2D" uid="uid://cw4tmmw28xnlf" path="res://player/sprites/player-side.png" id="2_68bnx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cncsl"]
+size = Vector2(4, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tug3a"]
+atlas = ExtResource("2_68bnx")
+region = Rect2(10, 10, 10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3qixj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tug3a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="pulsar" type="Area2D"]
+script = ExtResource("1_4chc6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cncsl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -3.5762787e-07)
+scale = Vector2(0.4, 1.4)
+sprite_frames = SubResource("SpriteFrames_3qixj")
