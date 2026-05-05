@@ -41,9 +41,11 @@ func manage_sprite_orientation(dir):
 func _on_detection_range_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
 		enemies_in_range.append(body)
+		body.is_attacking = true
 func _on_detection_range_body_exited(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
 		enemies_in_range.erase(body)
+		body.is_attacking = true
 
 func get_nearest_enemy_direction():
 	var nearest_enemy: Node2D = null
@@ -64,8 +66,8 @@ func _on_hurtbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
 		take_damage()
 
-func take_damage():
-	hp -= 1
+func take_damage(amount:float):
+	hp -= amount
 	if hp <= 0:
 		die()
 

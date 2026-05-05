@@ -21,7 +21,9 @@ animations = [{
 
 [resource]
 script = ExtResource("1_gd0rl")
+count = 3
 weapon_scene = ExtResource("3_lxggb")
+damage = 2.0
 cooldown = 4.0
 texture = SubResource("SpriteFrames_ym2g3")
 metadata/_custom_type_script = "uid://752lypha83ar"
